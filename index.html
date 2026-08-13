@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Битва знаний</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <section id="menu" class="screen">
+      <div class="logo">⚡</div>
+      <h1>БИТВА<br><span>ЗНАНИЙ</span></h1>
+      <p class="subtitle">Проверь, насколько ты умён!</p>
+
+      <div class="menu-card">
+        <div>🏆 Рекорд: <b id="menuRecord">0</b></div>
+        <div>💰 Монеты: <b id="menuCoins">0</b></div>
+      </div>
+
+      <button id="playBtn" class="main-btn">НАЧАТЬ ИГРУ</button>
+
+      <p class="small">10 вопросов • 15 секунд • 3 жизни</p>
+    </section>
+
+    <!-- ИГРА -->
+    <section id="game" class="screen hidden">
+
+      <header>
+        <button id="quitBtn" class="icon-btn">✕</button>
+
+        <div class="question-number">
+          ВОПРОС <b id="questionNumber">1</b>/10
+        </div>
+
+        <div class="lives" id="lives">
+          ❤️❤️❤️
+        </div>
+      </header>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="stats">
+        <div>💰 <b id="coins">0</b></div>
+        <div>🔥 x<b id="streak">0</b></div>
+        <div>🏆 <b id="score">0</b></div>
+      </div>
+
+      <div class="timer">
+        <div id="timerCircle">15</div>
+      </div>
+
+      <div class="question-card">
+        <div id="category">КАТЕГОРИЯ</div>
+        <h2 id="question">Вопрос</h2>
+      </div>
+
+      <div id="answers" class="answers"></div>
+
+      <div class="bonuses">
+        <button id="fiftyBtn">50/50</button>
+        <button id="timeBtn">+10 сек</button>
+        <button id="skipBtn">Пропуск</button>
+      </div>
+
+    </section>
+
+    <!-- КОНЕЦ ИГРЫ -->
+    <section id="result" class="screen hidden">
+
+      <div class="result-icon" id="resultIcon">🏆</div>
+
+      <h1 id="resultTitle">ИГРА ОКОНЧЕНА</h1>
+
+      <p class="result-text">Твой результат</p>
+
+      <div class="big-score">
+        <span id="finalScore">0</span>
+        <small>очков</small>
+      </div>
+
+      <div class="result-stats">
+        <div>
+          <b id="correctAnswers">0</b>
+          <span>Правильных</span>
+        </div>
+
+        <div>
+          <b id="finalCoins">0</b>
+          <span>Монет</span>
+        </div>
+
+        <div>
+          <b id="finalStreak">0</b>
+          <span>Серия</span>
+        </div>
+      </div>
+
+      <div id="recordMessage" class="record hidden">
+        ⭐ НОВЫЙ РЕКОРД! ⭐
+      </div>
+
+      <button id="againBtn" class="main-btn">
+        ИГРАТЬ СНОВА
+      </button>
+
+      <button id="menuBtn" class="secondary-btn">
+        В МЕНЮ
+      </button>
+
+    </section>
+
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
