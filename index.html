@@ -8,117 +8,233 @@
 </head>
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <!-- ГЛАВНОЕ МЕНЮ -->
-    <section id="menu" class="screen">
-      <div class="logo">⚡</div>
-      <h1>БИТВА<br><span>ЗНАНИЙ</span></h1>
-      <p class="subtitle">Проверь, насколько ты умён!</p>
+  <!-- МЕНЮ -->
+  <section id="menu" class="screen">
 
-      <div class="menu-card">
-        <div>🏆 Рекорд: <b id="menuRecord">0</b></div>
-        <div>💰 Монеты: <b id="menuCoins">0</b></div>
+    <div class="logo">⚡</div>
+
+    <h1>БИТВА<br><span>ЗНАНИЙ</span></h1>
+
+    <p class="subtitle">Проверь свои знания!</p>
+
+    <div class="menu-card">
+      <div>🏆 Рекорд<br><b id="menuRecord">0</b></div>
+      <div>💰 Монеты<br><b id="menuCoins">0</b></div>
+    </div>
+
+    <button id="playBtn" class="main-btn">
+      🎮 НАЧАТЬ ИГРУ
+    </button>
+
+    <button id="shopBtn" class="shop-open">
+      🛒 МАГАЗИН
+    </button>
+
+    <p class="small">
+      10 вопросов • 15 секунд • 3 жизни
+    </p>
+
+  </section>
+
+
+  <!-- МАГАЗИН -->
+  <section id="shop" class="screen hidden">
+
+    <div class="shop-header">
+      <button id="backBtn" class="back-btn">←</button>
+
+      <h2>🛒 МАГАЗИН</h2>
+
+      <div class="shop-money">
+        💰 <b id="shopCoins">0</b>
       </div>
+    </div>
 
-      <button id="playBtn" class="main-btn">НАЧАТЬ ИГРУ</button>
+    <p class="shop-description">
+      Покупай способности и используй их во время игры!
+    </p>
 
-      <p class="small">10 вопросов • 15 секунд • 3 жизни</p>
-    </section>
+    <div class="shop-list">
 
-    <!-- ИГРА -->
-    <section id="game" class="screen hidden">
+      <div class="shop-item">
+        <div class="ability-icon">✂️</div>
 
-      <header>
-        <button id="quitBtn" class="icon-btn">✕</button>
-
-        <div class="question-number">
-          ВОПРОС <b id="questionNumber">1</b>/10
+        <div class="ability-info">
+          <h3>50 / 50</h3>
+          <p>Убирает два неправильных ответа.</p>
+          <span>Количество: <b id="fiftyCount">0</b></span>
         </div>
 
-        <div class="lives" id="lives">
-          ❤️❤️❤️
-        </div>
-      </header>
-
-      <div class="progress">
-        <div id="progressBar"></div>
+        <button class="buy-btn" id="buyFifty">
+          100 💰
+        </button>
       </div>
 
-      <div class="stats">
-        <div>💰 <b id="coins">0</b></div>
-        <div>🔥 x<b id="streak">0</b></div>
-        <div>🏆 <b id="score">0</b></div>
-      </div>
 
-      <div class="timer">
-        <div id="timerCircle">15</div>
-      </div>
+      <div class="shop-item">
+        <div class="ability-icon">⏱️</div>
 
-      <div class="question-card">
-        <div id="category">КАТЕГОРИЯ</div>
-        <h2 id="question">Вопрос</h2>
-      </div>
-
-      <div id="answers" class="answers"></div>
-
-      <div class="bonuses">
-        <button id="fiftyBtn">50/50</button>
-        <button id="timeBtn">+10 сек</button>
-        <button id="skipBtn">Пропуск</button>
-      </div>
-
-    </section>
-
-    <!-- КОНЕЦ ИГРЫ -->
-    <section id="result" class="screen hidden">
-
-      <div class="result-icon" id="resultIcon">🏆</div>
-
-      <h1 id="resultTitle">ИГРА ОКОНЧЕНА</h1>
-
-      <p class="result-text">Твой результат</p>
-
-      <div class="big-score">
-        <span id="finalScore">0</span>
-        <small>очков</small>
-      </div>
-
-      <div class="result-stats">
-        <div>
-          <b id="correctAnswers">0</b>
-          <span>Правильных</span>
+        <div class="ability-info">
+          <h3>+10 секунд</h3>
+          <p>Добавляет 10 секунд к таймеру.</p>
+          <span>Количество: <b id="timeCount">0</b></span>
         </div>
 
-        <div>
-          <b id="finalCoins">0</b>
-          <span>Монет</span>
-        </div>
-
-        <div>
-          <b id="finalStreak">0</b>
-          <span>Серия</span>
-        </div>
+        <button class="buy-btn" id="buyTime">
+          150 💰
+        </button>
       </div>
 
-      <div id="recordMessage" class="record hidden">
-        ⭐ НОВЫЙ РЕКОРД! ⭐
+
+      <div class="shop-item">
+        <div class="ability-icon">⏭️</div>
+
+        <div class="ability-info">
+          <h3>Пропуск</h3>
+          <p>Пропускает текущий вопрос.</p>
+          <span>Количество: <b id="skipCount">0</b></span>
+        </div>
+
+        <button class="buy-btn" id="buySkip">
+          200 💰
+        </button>
       </div>
 
-      <button id="againBtn" class="main-btn">
-        ИГРАТЬ СНОВА
+    </div>
+
+  </section>
+
+
+  <!-- ИГРА -->
+  <section id="game" class="screen hidden">
+
+    <header>
+
+      <button id="quitBtn" class="icon-btn">
+        ✕
       </button>
 
-      <button id="menuBtn" class="secondary-btn">
-        В МЕНЮ
+      <div class="question-number">
+        ВОПРОС <b id="questionNumber">1</b>/10
+      </div>
+
+      <div class="lives" id="lives">
+        ❤️❤️❤️
+      </div>
+
+    </header>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <div class="stats">
+      <div>💰 <b id="coins">0</b></div>
+      <div>🔥 x<b id="streak">0</b></div>
+      <div>🏆 <b id="score">0</b></div>
+    </div>
+
+    <div class="timer">
+      <div id="timerCircle">15</div>
+    </div>
+
+    <div class="question-card">
+
+      <div id="category">
+        КАТЕГОРИЯ
+      </div>
+
+      <h2 id="question">
+        Вопрос
+      </h2>
+
+    </div>
+
+    <div id="answers" class="answers"></div>
+
+    <!-- СПОСОБНОСТИ -->
+    <div class="abilities">
+
+      <button id="fiftyBtn">
+        ✂️ 50/50
+        <span id="fiftyGameCount">0</span>
       </button>
 
-    </section>
+      <button id="timeBtn">
+        ⏱️ +10 сек
+        <span id="timeGameCount">0</span>
+      </button>
 
-  </div>
+      <button id="skipBtn">
+        ⏭️ Пропуск
+        <span id="skipGameCount">0</span>
+      </button>
 
-  <div id="toast"></div>
+    </div>
 
-  <script src="script.js"></script>
+  </section>
+
+
+  <!-- РЕЗУЛЬТАТ -->
+  <section id="result" class="screen hidden">
+
+    <div class="result-icon" id="resultIcon">
+      🏆
+    </div>
+
+    <h1 id="resultTitle">
+      ИГРА ОКОНЧЕНА
+    </h1>
+
+    <p class="result-text">
+      Твой результат
+    </p>
+
+    <div class="big-score">
+      <span id="finalScore">0</span>
+      <small>очков</small>
+    </div>
+
+    <div class="result-stats">
+
+      <div>
+        <b id="correctAnswers">0</b>
+        <span>Правильных</span>
+      </div>
+
+      <div>
+        <b id="finalCoins">0</b>
+        <span>Монет</span>
+      </div>
+
+      <div>
+        <b id="finalStreak">0</b>
+        <span>Серия</span>
+      </div>
+
+    </div>
+
+    <div id="recordMessage" class="record hidden">
+      ⭐ НОВЫЙ РЕКОРД! ⭐
+    </div>
+
+    <button id="againBtn" class="main-btn">
+      🎮 ИГРАТЬ СНОВА
+    </button>
+
+    <button id="menuBtn" class="secondary-btn">
+      В МЕНЮ
+    </button>
+
+  </section>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
