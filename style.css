@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #203a8f, #080d22 55%, #03050d);
+  color: white;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 20px;
+}
+
+.screen {
+  min-height: calc(100vh - 40px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* МЕНЮ */
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5c7cff, #7c4dff);
+  border-radius: 28px;
+  font-size: 45px;
+  box-shadow: 0 15px 40px rgba(70, 100, 255, .35);
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: .95;
+  letter-spacing: 3px;
+}
+
+h1 span {
+  color: #6d8cff;
+}
+
+.subtitle {
+  color: #9ca8d4;
+  margin-top: 15px;
+}
+
+.menu-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 35px 0 20px;
+  padding: 18px;
+  border: 1px solid #28386f;
+  border-radius: 18px;
+  background: rgba(20, 29, 70, .65);
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-card b {
+  color: #6d8cff;
+}
+
+.main-btn {
+  width: 100%;
+  max-width: 380px;
+  padding: 18px;
+  border: 0;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #5575ff, #774cff);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(80, 90, 255, .3);
+  transition: .2s;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+.small {
+  margin-top: 18px;
+  color: #68749f;
+  font-size: 12px;
+}
+
+/* ИГРА */
+
+#game {
+  position: relative;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #334477;
+  background: #111a3c;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.question-number {
+  text-align: center;
+  color: #8996c3;
+  font-size: 13px;
+}
+
+.question-number b {
+  color: white;
+}
+
+.lives {
+  font-size: 17px;
+  letter-spacing: -4px;
+}
+
+.progress {
+  height: 6px;
+  margin-top: 18px;
+  background: #172247;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #5c7cff, #9c5cff);
+  transition: width .3s;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  color: #8e9ac5;
+}
+
+.stats b {
+  color: white;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+#timerCircle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid #5e7cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 0 0 25px rgba(80, 110, 255, .3);
+}
+
+.question-card {
+  padding: 25px 20px;
+  background: linear-gradient(145deg, #151f4a, #0e1635);
+  border: 1px solid #2c3d78;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#category {
+  color: #6e8cff;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+#question {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.answers {
+  display: grid;
+  gap: 10px;
+}
+
+.answer {
+  width: 100%;
+  padding: 17px;
+  border-radius: 14px;
+  border: 1px solid #2d3d70;
+  background: #101a3c;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.answer:hover {
+  border-color: #6984ff;
+  background: #182552;
+}
+
+.answer.correct {
+  background: #0e633f;
+  border-color: #32e99b;
+}
+
+.answer.wrong {
+  background: #701d35;
+  border-color: #ff5577;
+}
+
+.answer:disabled {
+  cursor: default;
+}
+
+.bonuses {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.bonuses button {
+  flex: 1;
+  padding: 12px 5px;
+  border: 1px solid #334477;
+  border-radius: 12px;
+  background: #0d1533;
+  color: #aeb9e4;
+  cursor: pointer;
+}
+
+.bonuses button:hover {
+  border-color: #6d8cff;
+  color: white;
+}
+
+.bonuses button:disabled {
+  opacity: .35;
+}
+
+/* РЕЗУЛЬТАТ */
+
+#result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.result-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+#resultTitle {
+  font-size: 30px;
+}
+
+.result-text {
+  color: #8895c0;
+  margin-top: 15px;
+}
+
+.big-score {
+  margin: 20px 0;
+}
+
+.big-score span {
+  display: block;
+  font-size: 70px;
+  font-weight: bold;
+  color: #718bff;
+}
+
+.big-score small {
+  color: #8793bc;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 25px;
+}
+
+.result-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.result-stats b {
+  font-size: 23px;
+}
+
+.result-stats span {
+  color: #7885b1;
+  font-size: 11px;
+}
+
+.record {
+  color: #ffd84d;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.secondary-btn {
+  width: 100%;
+  max-width: 380px;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #334477;
+  background: transparent;
+  color: #9da9d2;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* УВЕДОМЛЕНИЯ */
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 100px);
+  padding: 13px 20px;
+  border-radius: 12px;
+  background: #182552;
+  border: 1px solid #4b61a0;
+  opacity: 0;
+  transition: .3s;
+  z-index: 100;
+}
+
+#toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 450px) {
+
+  .app {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  #question {
+    font-size: 19px;
+  }
+
+  .answer {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .bonuses button {
+    font-size: 11px;
+  }
+}
