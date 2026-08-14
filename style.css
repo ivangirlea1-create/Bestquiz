@@ -1,63 +1,24 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html,
-body {
-  min-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    min-height: 100vh;
 
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 
-  min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #273469, #11152b 60%, #070914);
 
-  background:
-    radial-gradient(
-      circle at top,
-      #263e91,
-      #090e24 55%,
-      #03050d
-    );
+    color: white;
 
-  color: white;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-button {
-
-  font-family: inherit;
-
-  cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-.app {
-
-  width: 100%;
-
-  max-width: 600px;
-
-  min-height: 100vh;
-
-  margin: auto;
-
-  padding: 20px;
-}
-
-.screen {
-
-  min-height:
-    calc(100vh - 40px);
-}
-
-.hidden {
-
-  display: none !important;
+    padding: 15px;
 }
 
 
@@ -65,333 +26,92 @@ button {
    МЕНЮ
 ========================= */
 
-#menu {
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  text-align: center;
+.menu {
+    width: 100%;
+    max-width: 500px;
 }
 
-.logo {
+.menu-box {
+    background: rgba(20, 25, 55, 0.95);
 
-  width: 90px;
+    border: 2px solid #5865f2;
 
-  height: 90px;
+    border-radius: 25px;
 
-  display: flex;
+    padding: 35px 25px;
 
-  align-items: center;
+    text-align: center;
 
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #5578ff,
-      #824cff
-    );
-
-  border-radius: 28px;
-
-  font-size: 45px;
-
-  box-shadow:
-    0 15px 40px
-    rgba(70, 100, 255, .35);
-
-  margin-bottom: 25px;
+    box-shadow:
+        0 0 30px rgba(88, 101, 242, 0.35);
 }
 
-h1 {
+.menu-box h1 {
+    font-size: 42px;
 
-  font-size: 42px;
+    margin-bottom: 10px;
 
-  line-height: .95;
+    color: #ffffff;
 
-  letter-spacing: 3px;
-}
-
-h1 span {
-
-  color: #708cff;
+    text-shadow:
+        0 0 15px #5865f2;
 }
 
 .subtitle {
+    font-size: 18px;
 
-  color: #9ca8d4;
+    color: #bfc4ff;
 
-  margin-top: 15px;
+    margin-bottom: 25px;
 }
 
-.menu-card {
+.menu-info {
+    background: #171c3d;
 
-  width: 100%;
+    border-radius: 15px;
 
-  max-width: 420px;
+    padding: 15px;
 
-  margin: 35px 0 15px;
+    margin-bottom: 20px;
 
-  padding: 18px 10px;
-
-  border: 1px solid #2c3e78;
-
-  border-radius: 18px;
-
-  background:
-    rgba(20, 29, 70, .7);
-
-  display: flex;
-
-  justify-content: space-around;
-
-  line-height: 1.7;
-
-  gap: 5px;
+    font-size: 20px;
 }
 
-.menu-card b {
+.main-button {
+    width: 100%;
 
-  color: #718cff;
+    border: none;
 
-  font-size: 19px;
-}
+    border-radius: 15px;
 
-.main-btn {
+    padding: 17px;
 
-  width: 100%;
+    font-size: 20px;
 
-  max-width: 380px;
+    font-weight: bold;
 
-  padding: 18px;
+    color: white;
 
-  border: 0;
-
-  border-radius: 15px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #5575ff,
-      #774cff
+    background: linear-gradient(
+        135deg,
+        #5865f2,
+        #8b5cf6
     );
 
-  color: white;
+    cursor: pointer;
 
-  font-weight: bold;
-
-  font-size: 16px;
-
-  box-shadow:
-    0 12px 30px
-    rgba(80, 90, 255, .3);
+    transition: 0.2s;
 }
 
-.main-btn:active {
+.main-button:hover {
+    transform: scale(1.03);
 
-  transform: scale(.98);
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.6);
 }
 
-.shop-open {
-
-  width: 100%;
-
-  max-width: 380px;
-
-  margin-top: 10px;
-
-  padding: 16px;
-
-  border: 1px solid #5268a9;
-
-  border-radius: 15px;
-
-  background: #111b40;
-
-  color: #b7c3ee;
-
-  font-weight: bold;
-}
-
-.small {
-
-  margin-top: 18px;
-
-  color: #68749f;
-
-  font-size: 12px;
-}
-
-
-/* =========================
-   МАГАЗИН
-========================= */
-
-#shop {
-
-  padding-top: 10px;
-}
-
-.shop-header {
-
-  display: grid;
-
-  grid-template-columns:
-    45px 1fr auto;
-
-  align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 15px;
-}
-
-.shop-header h2 {
-
-  text-align: center;
-
-  font-size: 21px;
-}
-
-.back-btn,
-.icon-btn {
-
-  width: 42px;
-
-  height: 42px;
-
-  border: 1px solid #334477;
-
-  border-radius: 12px;
-
-  background: #111a3c;
-
-  color: white;
-
-  font-size: 22px;
-}
-
-.shop-money {
-
-  color: #ffd84d;
-
-  white-space: nowrap;
-}
-
-.shop-description {
-
-  text-align: center;
-
-  color: #8895bd;
-
-  margin-bottom: 25px;
-
-  font-size: 14px;
-}
-
-.shop-list {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-.shop-item {
-
-  display: grid;
-
-  grid-template-columns:
-    55px 1fr auto;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 15px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #151f49,
-      #0e1635
-    );
-
-  border: 1px solid #2b3c76;
-
-  border-radius: 18px;
-}
-
-.ability-icon {
-
-  width: 52px;
-
-  height: 52px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #202d61;
-
-  border-radius: 15px;
-
-  font-size: 26px;
-}
-
-.ability-info h3 {
-
-  font-size: 16px;
-
-  margin-bottom: 5px;
-}
-
-.ability-info p {
-
-  color: #7e8bb5;
-
-  font-size: 11px;
-
-  line-height: 1.4;
-
-  margin-bottom: 5px;
-}
-
-.ability-info span {
-
-  color: #aeb9df;
-
-  font-size: 11px;
-}
-
-.ability-info span b {
-
-  color: #718cff;
-}
-
-.buy-btn {
-
-  padding: 11px 9px;
-
-  border: 1px solid #657eff;
-
-  border-radius: 11px;
-
-  background: #182552;
-
-  color: #91a3ff;
-
-  font-weight: bold;
-
-  white-space: nowrap;
+.main-button:active {
+    transform: scale(0.97);
 }
 
 
@@ -399,390 +119,149 @@ h1 span {
    ИГРА
 ========================= */
 
-#game {
+.game {
+    display: none;
 
-  padding-top: 5px;
+    width: 100%;
+    max-width: 600px;
 }
 
-header {
+.top-bar {
+    display: flex;
 
-  display: grid;
+    justify-content: space-between;
 
-  grid-template-columns:
-    45px 1fr auto;
+    align-items: center;
 
-  align-items: center;
+    margin-bottom: 15px;
 
-  gap: 10px;
+    gap: 10px;
 }
 
-.question-number {
+.level,
+.money {
+    background: rgba(20, 25, 55, 0.95);
 
-  text-align: center;
+    border: 1px solid #5865f2;
 
-  color: #8996c3;
+    border-radius: 12px;
 
-  font-size: 13px;
+    padding: 10px 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
 }
 
-.question-number b {
-
-  color: white;
+.money {
+    color: #ffd84d;
 }
 
-.lives {
 
-  font-size: 17px;
+/* =========================
+   ОКНО ВОПРОСА
+========================= */
 
-  letter-spacing: -4px;
+.quiz-box {
+    background: rgba(20, 25, 55, 0.97);
+
+    border: 2px solid #5865f2;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 0 30px rgba(88, 101, 242, 0.3);
 }
 
-.progress {
+.question-title {
+    text-align: center;
 
-  height: 6px;
+    color: #8b93ff;
 
-  margin-top: 18px;
+    font-size: 15px;
 
-  background: #172247;
+    font-weight: bold;
 
-  border-radius: 10px;
+    letter-spacing: 2px;
 
-  overflow: hidden;
+    margin-bottom: 15px;
 }
 
-#progressBar {
+.question {
+    min-height: 100px;
 
-  width: 0%;
+    display: flex;
 
-  height: 100%;
+    justify-content: center;
 
-  background:
-    linear-gradient(
-      90deg,
-      #5c7cff,
-      #9c5cff
-    );
+    align-items: center;
 
-  transition: width .3s;
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    line-height: 1.3;
+
+    margin-bottom: 20px;
 }
 
-.stats {
 
-  display: flex;
-
-  justify-content: space-between;
-
-  margin: 20px 0;
-
-  color: #8e9ac5;
-}
-
-.stats b {
-
-  color: white;
-}
-
-.timer {
-
-  display: flex;
-
-  justify-content: center;
-
-  margin: 10px 0 20px;
-}
-
-#timerCircle {
-
-  width: 70px;
-
-  height: 70px;
-
-  border-radius: 50%;
-
-  border: 5px solid #5e7cff;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 25px;
-
-  font-weight: bold;
-
-  box-shadow:
-    0 0 25px
-    rgba(80, 110, 255, .3);
-}
-
-.question-card {
-
-  padding: 25px 20px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #151f4a,
-      #0e1635
-    );
-
-  border: 1px solid #2c3d78;
-
-  border-radius: 20px;
-
-  text-align: center;
-
-  margin-bottom: 15px;
-}
-
-#category {
-
-  color: #6e8cff;
-
-  font-size: 11px;
-
-  font-weight: bold;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 15px;
-}
-
-#question {
-
-  font-size: 22px;
-
-  line-height: 1.35;
-}
-
-.hard-badge {
-
-  display: inline-block;
-
-  margin-bottom: 12px;
-
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  background:
-    rgba(255, 91, 91, .15);
-
-  color: #ff7777;
-
-  font-size: 11px;
-
-  font-weight: bold;
-}
+/* =========================
+   ОТВЕТЫ
+========================= */
 
 .answers {
+    display: grid;
 
-  display: grid;
+    grid-template-columns: 1fr 1fr;
 
-  gap: 10px;
+    gap: 12px;
 }
 
-.answer {
+.answer-btn {
+    min-height: 65px;
 
-  width: 100%;
+    padding: 12px;
 
-  padding: 17px;
+    border: 2px solid #343b70;
 
-  border-radius: 14px;
+    border-radius: 15px;
 
-  border: 1px solid #2d3d70;
+    background: #171c3d;
 
-  background: #101a3c;
+    color: white;
 
-  color: white;
+    font-size: 17px;
 
-  text-align: left;
+    font-weight: bold;
 
-  font-size: 15px;
+    cursor: pointer;
 
-  transition: .2s;
+    transition: 0.2s;
 }
 
-.answer:active {
+.answer-btn:hover {
+    border-color: #5865f2;
 
-  transform: scale(.98);
+    background: #222956;
+
+    transform: translateY(-2px);
 }
 
-.answer.correct {
-
-  background: #0e633f;
-
-  border-color: #32e99b;
+.answer-btn:active {
+    transform: scale(0.97);
 }
 
-.answer.wrong {
+.answer-btn:disabled {
+    opacity: 0.6;
 
-  background: #701d35;
+    cursor: not-allowed;
 
-  border-color: #ff5577;
-}
-
-.answer:disabled {
-
-  cursor: default;
-}
-
-
-/* =========================
-   СПОСОБНОСТИ
-========================= */
-
-.abilities {
-
-  display: flex;
-
-  gap: 8px;
-
-  margin-top: 15px;
-}
-
-.abilities button {
-
-  flex: 1;
-
-  min-height: 52px;
-
-  padding: 7px;
-
-  border: 1px solid #334477;
-
-  border-radius: 12px;
-
-  background: #0d1533;
-
-  color: #aeb9e4;
-
-  font-size: 12px;
-}
-
-.abilities button span {
-
-  display: block;
-
-  margin-top: 3px;
-
-  color: #6f8cff;
-
-  font-weight: bold;
-}
-
-
-/* =========================
-   ВЫБОР КАТЕГОРИИ
-========================= */
-
-#categoryScreen {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-}
-
-.category-logo {
-
-  font-size: 70px;
-
-  margin-bottom: 15px;
-}
-
-.category-title {
-
-  font-size: 30px;
-
-  color: #ff7777;
-}
-
-.category-subtitle {
-
-  margin-top: 12px;
-
-  color: #929ec7;
-}
-
-.hard-info {
-
-  margin: 20px 0;
-
-  padding: 15px 25px;
-
-  border-radius: 15px;
-
-  background: rgba(255, 90, 90, .1);
-
-  border: 1px solid #51314c;
-
-  line-height: 1.8;
-
-  color: #c3c9e3;
-}
-
-.category-choices {
-
-  width: 100%;
-
-  display: grid;
-
-  gap: 12px;
-}
-
-.category-btn {
-
-  width: 100%;
-
-  padding: 19px;
-
-  border: 1px solid #40558d;
-
-  border-radius: 16px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #17234d,
-      #0d1533
-    );
-
-  color: white;
-
-  font-size: 17px;
-
-  font-weight: bold;
-}
-
-.category-btn:active {
-
-  transform: scale(.98);
-}
-
-.reroll-btn {
-
-  width: 100%;
-
-  margin-top: 15px;
-
-  padding: 15px;
-
-  border: 1px solid #78662c;
-
-  border-radius: 14px;
-
-  background: #302a14;
-
-  color: #ffd84d;
-
-  font-weight: bold;
+    transform: none;
 }
 
 
@@ -790,161 +269,174 @@ header {
    РЕЗУЛЬТАТ
 ========================= */
 
-#result {
+.result {
+    display: none;
 
-  display: flex;
+    margin-top: 20px;
 
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-}
-
-.result-icon {
-
-  font-size: 70px;
-
-  margin-bottom: 20px;
-}
-
-#resultTitle {
-
-  font-size: 30px;
+    text-align: center;
 }
 
 .result-text {
+    font-size: 25px;
 
-  color: #8895c0;
+    font-weight: bold;
 
-  margin-top: 15px;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    margin-bottom: 15px;
 }
 
-.big-score {
+.result-text.correct {
+    background: rgba(34, 197, 94, 0.15);
 
-  margin: 20px 0;
+    border: 2px solid #22c55e;
+
+    color: #4ade80;
 }
 
-.big-score span {
+.result-text.wrong {
+    background: rgba(239, 68, 68, 0.15);
 
-  display: block;
+    border: 2px solid #ef4444;
 
-  font-size: 70px;
-
-  font-weight: bold;
-
-  color: #718bff;
-}
-
-.big-score small {
-
-  color: #8793bc;
-}
-
-.result-stats {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  width: 100%;
-
-  max-width: 400px;
-
-  margin-bottom: 20px;
-}
-
-.result-stats div {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-.result-stats b {
-
-  font-size: 23px;
-}
-
-.result-stats span {
-
-  color: #7885b1;
-
-  font-size: 11px;
-}
-
-.countdown {
-
-  color: #aeb9df;
-
-  margin-bottom: 15px;
-
-  font-size: 14px;
-}
-
-.secondary-btn {
-
-  width: 100%;
-
-  max-width: 380px;
-
-  padding: 15px;
-
-  margin-top: 10px;
-
-  border: 1px solid #334477;
-
-  background: transparent;
-
-  color: #9da9d2;
-
-  border-radius: 14px;
+    color: #f87171;
 }
 
 
 /* =========================
-   TOAST
+   КНОПКИ ДАЛЬШЕ / МЕНЮ
 ========================= */
 
-#toast {
+.next-buttons {
+    display: flex;
 
-  position: fixed;
+    gap: 10px;
 
-  left: 50%;
-
-  bottom: 30px;
-
-  transform:
-    translate(-50%, 100px);
-
-  padding: 13px 20px;
-
-  border-radius: 12px;
-
-  background: #182552;
-
-  border: 1px solid #4b61a0;
-
-  opacity: 0;
-
-  transition: .3s;
-
-  z-index: 1000;
-
-  white-space: nowrap;
+    margin-top: 10px;
 }
 
-#toast.show {
+.next-buttons button {
+    flex: 1;
 
-  transform:
-    translate(-50%, 0);
+    min-height: 55px;
 
-  opacity: 1;
+    border: none;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#nextQuestionBtn,
+#hardNextBtn,
+#hardFinishBtn {
+    background: linear-gradient(
+        135deg,
+        #22c55e,
+        #16a34a
+    );
+}
+
+#backMenuBtn,
+#hardMenuBtn,
+#hardFinishMenuBtn {
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+}
+
+.next-buttons button:hover {
+    transform: scale(1.03);
+}
+
+.next-buttons button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   ТАЙМЕР В МЕНЮ
+========================= */
+
+.menu-countdown {
+    background: rgba(88, 101, 242, 0.15);
+
+    border: 2px solid #5865f2;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    font-size: 19px;
+
+    animation: pulse 1s infinite;
+}
+
+.menu-countdown strong {
+    font-size: 28px;
+
+    color: #8b93ff;
+}
+
+
+/* =========================
+   СЛОЖНЫЙ УРОВЕНЬ
+========================= */
+
+.hard-finish {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(245, 158, 11, 0.12);
+
+    border: 2px solid #f59e0b;
+}
+
+.hard-finish h2 {
+    color: #fbbf24;
+
+    margin-bottom: 10px;
+}
+
+.hard-finish p {
+    margin: 8px 0;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   АНИМАЦИЯ
+========================= */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 
@@ -952,66 +444,56 @@ header {
    ТЕЛЕФОН
 ========================= */
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
 
-  .app {
+    body {
+        padding: 10px;
+    }
 
-    padding: 15px;
-  }
+    .menu-box {
+        padding: 28px 18px;
+    }
 
-  h1 {
+    .menu-box h1 {
+        font-size: 34px;
+    }
 
-    font-size: 34px;
-  }
+    .quiz-box {
+        padding: 18px;
+    }
 
-  #question {
+    .question {
+        font-size: 21px;
 
-    font-size: 19px;
-  }
+        min-height: 90px;
+    }
 
-  .answer {
+    .answers {
+        grid-template-columns: 1fr;
+    }
 
-    padding: 15px;
+    .answer-btn {
+        min-height: 58px;
 
-    font-size: 14px;
-  }
+        font-size: 16px;
+    }
 
-  .shop-item {
+    .next-buttons {
+        flex-direction: column;
+    }
 
-    grid-template-columns:
-      48px 1fr auto;
+    .next-buttons button {
+        width: 100%;
+    }
 
-    gap: 8px;
-  }
+    .top-bar {
+        font-size: 14px;
+    }
 
-  .ability-icon {
+    .level,
+    .money {
+        padding: 9px 11px;
 
-    width: 45px;
-
-    height: 45px;
-
-    font-size: 22px;
-  }
-
-  .ability-info h3 {
-
-    font-size: 14px;
-  }
-
-  .buy-btn {
-
-    font-size: 11px;
-
-    padding: 9px 6px;
-  }
-
-  .abilities button {
-
-    font-size: 10px;
-  }
-
-  .menu-card {
-
-    font-size: 12px;
-  }
+        font-size: 14px;
+    }
 }
