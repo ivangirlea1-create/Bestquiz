@@ -21,6 +21,7 @@
     <p class="subtitle">Сможешь дойти до 1000 уровня?</p>
 
     <div class="menu-card">
+
       <div>
         🏆 Уровень<br>
         <b id="menuLevel">1</b>
@@ -35,6 +36,7 @@
         🏆 Рекорд<br>
         <b id="menuRecord">0</b>
       </div>
+
     </div>
 
     <button id="playBtn" class="main-btn">
@@ -57,9 +59,7 @@
 
     <div class="shop-header">
 
-      <button id="backBtn" class="back-btn">
-        ←
-      </button>
+      <button id="backBtn" class="back-btn">←</button>
 
       <h2>🛒 МАГАЗИН</h2>
 
@@ -73,16 +73,11 @@
       Покупай способности для игры.
     </p>
 
-
     <div class="shop-list">
-
-      <!-- 50/50 -->
 
       <div class="shop-item">
 
-        <div class="ability-icon">
-          ✂️
-        </div>
+        <div class="ability-icon">✂️</div>
 
         <div class="ability-info">
 
@@ -106,13 +101,9 @@
       </div>
 
 
-      <!-- +10 секунд -->
-
       <div class="shop-item">
 
-        <div class="ability-icon">
-          ⏱️
-        </div>
+        <div class="ability-icon">⏱️</div>
 
         <div class="ability-info">
 
@@ -136,13 +127,9 @@
       </div>
 
 
-      <!-- ДРУГОЙ ВОПРОС -->
-
       <div class="shop-item">
 
-        <div class="ability-icon">
-          🔄
-        </div>
+        <div class="ability-icon">🔄</div>
 
         <div class="ability-info">
 
@@ -171,7 +158,6 @@
 
 
   <!-- ИГРА -->
-
   <section id="game" class="screen hidden">
 
     <header>
@@ -181,10 +167,8 @@
       </button>
 
       <div class="question-number">
-
         УРОВЕНЬ
         <b id="levelNumber">1</b>
-
       </div>
 
       <div class="lives" id="lives">
@@ -195,9 +179,7 @@
 
 
     <div class="progress">
-
       <div id="progressBar"></div>
-
     </div>
 
 
@@ -247,40 +229,21 @@
     <div id="answers" class="answers"></div>
 
 
-    <!-- СПОСОБНОСТИ -->
-
     <div class="abilities">
 
       <button id="fiftyBtn">
-
         ✂️ 50/50
-
-        <span id="fiftyGameCount">
-          0
-        </span>
-
+        <span id="fiftyGameCount">0</span>
       </button>
-
 
       <button id="timeBtn">
-
         ⏱️ +10 сек
-
-        <span id="timeGameCount">
-          0
-        </span>
-
+        <span id="timeGameCount">0</span>
       </button>
 
-
       <button id="otherBtn">
-
         🔄 Другой
-
-        <span id="otherGameCount">
-          0
-        </span>
-
+        <span id="otherGameCount">0</span>
       </button>
 
     </div>
@@ -289,7 +252,6 @@
 
 
   <!-- ВЫБОР КАТЕГОРИИ -->
-
   <section id="categoryScreen" class="screen hidden">
 
     <div class="category-logo">
@@ -324,11 +286,10 @@
 
 
   <!-- РЕЗУЛЬТАТ -->
-
   <section id="result" class="screen hidden">
 
     <div id="resultIcon" class="result-icon">
-      🏆
+      🎉
     </div>
 
     <h1 id="resultTitle">
@@ -395,8 +356,10 @@
     </div>
 
 
+    <!-- БЕЗ ТАЙМЕРА -->
+
     <div id="resultCountdown" class="countdown">
-      Возврат в меню через 5...
+      Выбери действие:
     </div>
 
 
@@ -414,7 +377,6 @@
 
 
 <div id="toast"></div>
-
 
 <script src="script.js"></script>
 
