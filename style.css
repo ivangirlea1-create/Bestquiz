@@ -2,13 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   font-family: Arial, sans-serif;
-
-  min-height: 100vh;
 
   background:
     radial-gradient(
@@ -19,23 +21,20 @@ body {
     );
 
   color: white;
-
-  touch-action: manipulation;
 }
 
 button {
   font-family: inherit;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .app {
   width: 100%;
   max-width: 600px;
-
   min-height: 100vh;
 
   margin: auto;
-
   padding: 20px;
 }
 
@@ -54,11 +53,9 @@ button {
 
 #menu {
   display: flex;
-
   flex-direction: column;
 
   justify-content: center;
-
   align-items: center;
 
   text-align: center;
@@ -69,7 +66,6 @@ button {
   height: 90px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -85,17 +81,14 @@ button {
   font-size: 45px;
 
   box-shadow:
-    0 15px 40px
-    rgba(70, 100, 255, .35);
+    0 15px 40px rgba(70, 100, 255, .35);
 
   margin-bottom: 25px;
 }
 
 h1 {
   font-size: 42px;
-
   line-height: .95;
-
   letter-spacing: 3px;
 }
 
@@ -105,27 +98,22 @@ h1 span {
 
 .subtitle {
   color: #9ca8d4;
-
   margin-top: 15px;
 }
 
 .menu-card {
   width: 100%;
-  max-width: 380px;
+  max-width: 430px;
 
   margin: 35px 0 15px;
-
   padding: 18px;
 
   border: 1px solid #2c3e78;
-
   border-radius: 18px;
 
-  background:
-    rgba(20, 29, 70, .7);
+  background: rgba(20, 29, 70, .7);
 
   display: flex;
-
   justify-content: space-around;
 
   line-height: 1.7;
@@ -133,18 +121,16 @@ h1 span {
 
 .menu-card b {
   color: #718cff;
-
   font-size: 19px;
 }
 
 .main-btn {
   width: 100%;
-  max-width: 380px;
+  max-width: 430px;
 
   padding: 18px;
 
   border: 0;
-
   border-radius: 15px;
 
   background:
@@ -157,52 +143,38 @@ h1 span {
   color: white;
 
   font-weight: bold;
-
   font-size: 16px;
 
   box-shadow:
-    0 12px 30px
-    rgba(80, 90, 255, .3);
+    0 12px 30px rgba(80, 90, 255, .3);
 
   transition: .2s;
 }
 
-.main-btn:hover {
-  transform: translateY(-2px);
-
-  filter: brightness(1.15);
+.main-btn:active {
+  transform: scale(.97);
 }
 
 .shop-open {
   width: 100%;
-  max-width: 380px;
+  max-width: 430px;
 
   margin-top: 10px;
 
   padding: 16px;
 
   border: 1px solid #5268a9;
-
   border-radius: 15px;
 
   background: #111b40;
-
   color: #b7c3ee;
 
   font-weight: bold;
 }
 
-.shop-open:hover {
-  background: #1b2a5d;
-
-  color: white;
-}
-
 .small {
   margin-top: 18px;
-
   color: #68749f;
-
   font-size: 12px;
 }
 
@@ -217,12 +189,9 @@ h1 span {
 
 .shop-header {
   display: grid;
-
-  grid-template-columns:
-    45px 1fr auto;
+  grid-template-columns: 45px 1fr auto;
 
   align-items: center;
-
   gap: 10px;
 
   margin-bottom: 15px;
@@ -230,7 +199,6 @@ h1 span {
 
 .shop-header h2 {
   text-align: center;
-
   font-size: 21px;
 }
 
@@ -239,11 +207,9 @@ h1 span {
   height: 42px;
 
   border: 1px solid #334477;
-
   border-radius: 12px;
 
   background: #111a3c;
-
   color: white;
 
   font-size: 22px;
@@ -251,7 +217,6 @@ h1 span {
 
 .shop-money {
   color: #ffd84d;
-
   white-space: nowrap;
 }
 
@@ -267,9 +232,7 @@ h1 span {
 
 .shop-list {
   display: flex;
-
   flex-direction: column;
-
   gap: 12px;
 }
 
@@ -280,7 +243,6 @@ h1 span {
     55px 1fr auto;
 
   align-items: center;
-
   gap: 12px;
 
   padding: 15px;
@@ -293,7 +255,6 @@ h1 span {
     );
 
   border: 1px solid #2b3c76;
-
   border-radius: 18px;
 }
 
@@ -302,12 +263,10 @@ h1 span {
   height: 52px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   background: #202d61;
-
   border-radius: 15px;
 
   font-size: 26px;
@@ -315,7 +274,6 @@ h1 span {
 
 .ability-info h3 {
   font-size: 16px;
-
   margin-bottom: 5px;
 }
 
@@ -331,7 +289,6 @@ h1 span {
 
 .ability-info span {
   color: #aeb9df;
-
   font-size: 11px;
 }
 
@@ -343,22 +300,14 @@ h1 span {
   padding: 11px 9px;
 
   border: 1px solid #657eff;
-
   border-radius: 11px;
 
   background: #182552;
-
   color: #91a3ff;
 
   font-weight: bold;
 
   white-space: nowrap;
-}
-
-.buy-btn:hover {
-  background: #657eff;
-
-  color: white;
 }
 
 
@@ -370,7 +319,9 @@ header {
   display: grid;
 
   grid-template-columns:
-    45px 1fr auto;
+    45px
+    1fr
+    auto;
 
   align-items: center;
 
@@ -388,6 +339,8 @@ header {
   color: white;
 
   border-radius: 12px;
+
+  font-size: 18px;
 }
 
 .question-number {
@@ -395,7 +348,9 @@ header {
 
   color: #8996c3;
 
-  font-size: 13px;
+  font-size: 12px;
+
+  line-height: 1.5;
 }
 
 .question-number b {
@@ -404,7 +359,6 @@ header {
 
 .lives {
   font-size: 17px;
-
   letter-spacing: -4px;
 }
 
@@ -422,7 +376,6 @@ header {
 
 #progressBar {
   width: 0%;
-
   height: 100%;
 
   background:
@@ -437,7 +390,6 @@ header {
 
 .stats {
   display: flex;
-
   justify-content: space-between;
 
   margin: 20px 0;
@@ -451,7 +403,6 @@ header {
 
 .timer {
   display: flex;
-
   justify-content: center;
 
   margin: 10px 0 20px;
@@ -466,17 +417,14 @@ header {
   border: 5px solid #5e7cff;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   font-size: 25px;
-
   font-weight: bold;
 
   box-shadow:
-    0 0 25px
-    rgba(80, 110, 255, .3);
+    0 0 25px rgba(80, 110, 255, .3);
 }
 
 .question-card {
@@ -512,13 +460,11 @@ header {
 
 #question {
   font-size: 22px;
-
   line-height: 1.35;
 }
 
 .answers {
   display: grid;
-
   gap: 10px;
 }
 
@@ -542,21 +488,17 @@ header {
   transition: .2s;
 }
 
-.answer:hover {
-  border-color: #6984ff;
-
-  background: #182552;
+.answer:active {
+  transform: scale(.98);
 }
 
 .answer.correct {
   background: #0e633f;
-
   border-color: #32e99b;
 }
 
 .answer.wrong {
   background: #701d35;
-
   border-color: #ff5577;
 }
 
@@ -605,12 +547,6 @@ header {
   font-weight: bold;
 }
 
-.abilities button:hover {
-  border-color: #6d8cff;
-
-  color: white;
-}
-
 
 /* =========================
    РЕЗУЛЬТАТ
@@ -622,7 +558,6 @@ header {
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
@@ -689,7 +624,6 @@ header {
 
 .result-stats span {
   color: #7885b1;
-
   font-size: 11px;
 }
 
@@ -704,7 +638,7 @@ header {
 .secondary-btn {
   width: 100%;
 
-  max-width: 380px;
+  max-width: 430px;
 
   padding: 15px;
 
@@ -728,7 +662,6 @@ header {
   position: fixed;
 
   left: 50%;
-
   bottom: 30px;
 
   transform:
@@ -777,8 +710,11 @@ header {
 
   .answer {
     padding: 15px;
-
     font-size: 14px;
+  }
+
+  .menu-card {
+    font-size: 12px;
   }
 
   .shop-item {
