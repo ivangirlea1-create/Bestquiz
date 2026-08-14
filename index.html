@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Битва знаний</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,20 +18,12 @@
 
     <h1>БИТВА<br><span>ЗНАНИЙ</span></h1>
 
-    <p class="subtitle">100 вопросов. Сможешь пройти всех?</p>
+    <p class="subtitle">Проверь свой интеллект!</p>
 
     <div class="menu-card">
-      <div>
-        🏆 Рекорд
-        <br>
-        <b id="menuRecord">0</b>
-      </div>
-
-      <div>
-        💰 Монеты
-        <br>
-        <b id="menuCoins">0</b>
-      </div>
+      <div>🏆 Рекорд<br><b id="menuRecord">0</b></div>
+      <div>💰 Монеты<br><b id="menuCoins">0</b></div>
+      <div>⭐ Уровень<br><b id="menuLevel">1</b></div>
     </div>
 
     <button id="playBtn" class="main-btn">
@@ -43,7 +35,7 @@
     </button>
 
     <p class="small">
-      100 вопросов • 15 секунд • 3 жизни
+      10 вопросов на каждом уровне • 15 секунд • 3 жизни
     </p>
 
   </section>
@@ -53,17 +45,13 @@
   <section id="shop" class="screen hidden">
 
     <div class="shop-header">
-
-      <button id="backBtn" class="back-btn">
-        ←
-      </button>
+      <button id="backBtn" class="back-btn">←</button>
 
       <h2>🛒 МАГАЗИН</h2>
 
       <div class="shop-money">
         💰 <b id="shopCoins">0</b>
       </div>
-
     </div>
 
     <p class="shop-description">
@@ -73,74 +61,45 @@
     <div class="shop-list">
 
       <div class="shop-item">
-
         <div class="ability-icon">✂️</div>
 
         <div class="ability-info">
           <h3>50 / 50</h3>
-
-          <p>
-            Убирает два неправильных ответа.
-          </p>
-
-          <span>
-            Количество:
-            <b id="fiftyCount">0</b>
-          </span>
+          <p>Убирает два неправильных ответа.</p>
+          <span>Количество: <b id="fiftyCount">0</b></span>
         </div>
 
         <button class="buy-btn" id="buyFifty">
           100 💰
         </button>
-
       </div>
 
-
       <div class="shop-item">
-
         <div class="ability-icon">⏱️</div>
 
         <div class="ability-info">
           <h3>+10 секунд</h3>
-
-          <p>
-            Добавляет 10 секунд к таймеру.
-          </p>
-
-          <span>
-            Количество:
-            <b id="timeCount">0</b>
-          </span>
+          <p>Добавляет 10 секунд к таймеру.</p>
+          <span>Количество: <b id="timeCount">0</b></span>
         </div>
 
         <button class="buy-btn" id="buyTime">
           150 💰
         </button>
-
       </div>
 
-
       <div class="shop-item">
-
         <div class="ability-icon">⏭️</div>
 
         <div class="ability-info">
           <h3>Пропуск</h3>
-
-          <p>
-            Пропускает текущий вопрос.
-          </p>
-
-          <span>
-            Количество:
-            <b id="skipCount">0</b>
-          </span>
+          <p>Пропускает текущий вопрос.</p>
+          <span>Количество: <b id="skipCount">0</b></span>
         </div>
 
         <button class="buy-btn" id="buySkip">
           200 💰
         </button>
-
       </div>
 
     </div>
@@ -158,8 +117,9 @@
       </button>
 
       <div class="question-number">
-        ВОПРОС
-        <b id="questionNumber">1</b>/100
+        ⭐ УРОВЕНЬ <b id="levelNumber">1</b>
+        <br>
+        ВОПРОС <b id="questionNumber">1</b>/10
       </div>
 
       <div class="lives" id="lives">
@@ -168,37 +128,19 @@
 
     </header>
 
-
     <div class="progress">
       <div id="progressBar"></div>
     </div>
 
-
     <div class="stats">
-
-      <div>
-        💰 <b id="coins">0</b>
-      </div>
-
-      <div>
-        🔥 x<b id="streak">0</b>
-      </div>
-
-      <div>
-        🏆 <b id="score">0</b>
-      </div>
-
+      <div>💰 <b id="coins">0</b></div>
+      <div>🔥 x<b id="streak">0</b></div>
+      <div>🏆 <b id="score">0</b></div>
     </div>
-
 
     <div class="timer">
-
-      <div id="timerCircle">
-        15
-      </div>
-
+      <div id="timerCircle">15</div>
     </div>
-
 
     <div class="question-card">
 
@@ -212,11 +154,8 @@
 
     </div>
 
-
     <div id="answers" class="answers"></div>
 
-
-    <!-- СПОСОБНОСТИ -->
     <div class="abilities">
 
       <button id="fiftyBtn">
@@ -255,17 +194,9 @@
     </p>
 
     <div class="big-score">
-
-      <span id="finalScore">
-        0
-      </span>
-
-      <small>
-        очков
-      </small>
-
+      <span id="finalScore">0</span>
+      <small>очков</small>
     </div>
-
 
     <div class="result-stats">
 
@@ -280,17 +211,15 @@
       </div>
 
       <div>
-        <b id="finalStreak">0</b>
-        <span>Серия</span>
+        <b id="finalLevel">1</b>
+        <span>Уровень</span>
       </div>
 
     </div>
 
-
     <div id="recordMessage" class="record hidden">
       ⭐ НОВЫЙ РЕКОРД! ⭐
     </div>
-
 
     <button id="againBtn" class="main-btn">
       🎮 ИГРАТЬ СНОВА
@@ -304,9 +233,7 @@
 
 </div>
 
-
 <div id="toast"></div>
-
 
 <script src="script.js"></script>
 
