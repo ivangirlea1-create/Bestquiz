@@ -1,6 +1,9 @@
 /* =====================================================
    БИТВА ЗНАНИЙ
-   Версия с уровнями до 1000+
+   1 вопрос = обычный уровень
+   Каждый 5-й = 3 сложных вопроса
+   После ответа = 2 секунды
+   Потом экран результата БЕЗ автоматического перехода
 ===================================================== */
 
 
@@ -12,86 +15,73 @@ const questions = [
 
   {
     category: "🌿 ПРИРОДА",
-    question: "Какое дерево считается самым высоким?",
-    answers: ["Секвойя", "Берёза", "Дуб", "Ива"],
-    correct: 0
-  },
-
-  {
-    category: "🌿 ПРИРОДА",
     question: "Какой океан самый большой?",
-    answers: ["Атлантический", "Тихий", "Индийский", "Северный Ледовитый"],
-    correct: 1
-  },
-
-  {
-    category: "🌿 ПРИРОДА",
-    question: "Какое животное самое быстрое на суше?",
-    answers: ["Лев", "Гепард", "Волк", "Лошадь"],
+    answers: [
+      "Атлантический",
+      "Тихий",
+      "Индийский",
+      "Северный Ледовитый"
+    ],
     correct: 1
   },
 
   {
     category: "🌿 ПРИРОДА",
     question: "Сколько ног у паука?",
-    answers: ["6", "8", "10", "12"],
+    answers: [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
     correct: 1
   },
 
   {
     category: "🌿 ПРИРОДА",
-    question: "Какой газ нужен растениям для фотосинтеза?",
-    answers: ["Кислород", "Азот", "Углекислый газ", "Гелий"],
-    correct: 2
-  },
-
-  {
-    category: "🌿 ПРИРОДА",
-    question: "Какое животное является самым большим на Земле?",
-    answers: ["Слон", "Синий кит", "Жираф", "Кашалот"],
+    question: "Какое животное самое быстрое на суше?",
+    answers: [
+      "Лев",
+      "Гепард",
+      "Волк",
+      "Лошадь"
+    ],
     correct: 1
   },
 
   {
     category: "🌿 ПРИРОДА",
-    question: "Как называется детёныш лягушки?",
-    answers: ["Головастик", "Личинка", "Малёк", "Куколка"],
-    correct: 0
-  },
-
-  {
-    category: "🌿 ПРИРОДА",
-    question: "Какой цветок обычно ассоциируется с подсолнцем?",
-    answers: ["Роза", "Подсолнечник", "Тюльпан", "Лилия"],
+    question: "Какое животное самое большое на Земле?",
+    answers: [
+      "Слон",
+      "Синий кит",
+      "Жираф",
+      "Кашалот"
+    ],
     correct: 1
   },
-
-  {
-    category: "🌿 ПРИРОДА",
-    question: "Какое животное впадает в спячку?",
-    answers: ["Медведь", "Гепард", "Дельфин", "Пингвин"],
-    correct: 0
-  },
-
-  {
-    category: "🌿 ПРИРОДА",
-    question: "Сколько континентов на Земле?",
-    answers: ["5", "6", "7", "8"],
-    correct: 2
-  },
-
 
   {
     category: "🎮 ИГРЫ",
     question: "Какая игра содержит кубический мир и крафт?",
-    answers: ["Minecraft", "FIFA", "Tetris", "Chess"],
+    answers: [
+      "Minecraft",
+      "FIFA",
+      "Tetris",
+      "Chess"
+    ],
     correct: 0
   },
 
   {
     category: "🎮 ИГРЫ",
     question: "В какой игре игроки строят фигуры из падающих блоков?",
-    answers: ["Tetris", "Roblox", "Brawl Stars", "Fortnite"],
+    answers: [
+      "Tetris",
+      "Roblox",
+      "Brawl Stars",
+      "Fortnite"
+    ],
     correct: 0
   },
 
@@ -109,68 +99,15 @@ const questions = [
 
   {
     category: "🎮 ИГРЫ",
-    question: "В какой игре есть персонаж Mario?",
-    answers: ["Nintendo", "Minecraft", "Roblox", "Valorant"],
-    correct: 0
-  },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Как называется игровая валюта в Brawl Stars?",
-    answers: ["Монеты", "Гемы", "Робуксы", "В-баксы"],
-    correct: 1
-  },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Какая игра известна режимом Battle Royale?",
-    answers: ["Fortnite", "Chess", "Tetris", "Solitaire"],
-    correct: 0
-  },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Как называется платформа с огромным количеством пользовательских игр?",
-    answers: ["Roblox", "Excel", "Spotify", "Word"],
-    correct: 0
-  },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Какой жанр означает FPS?",
+    question: "Как называется платформа с пользовательскими играми?",
     answers: [
-      "Шутер от первого лица",
-      "Гонки",
-      "Стратегия",
-      "Симулятор"
+      "Roblox",
+      "Spotify",
+      "Word",
+      "Excel"
     ],
     correct: 0
   },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Что обычно означает HP в игре?",
-    answers: [
-      "Здоровье",
-      "Монеты",
-      "Скорость",
-      "Уровень"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "🎮 ИГРЫ",
-    question: "Что такое NPC?",
-    answers: [
-      "Неигровой персонаж",
-      "Игровая валюта",
-      "Оружие",
-      "Карта"
-    ],
-    correct: 0
-  },
-
 
   {
     category: "💻 ТЕХНОЛОГИИ",
@@ -198,8 +135,13 @@ const questions = [
 
   {
     category: "💻 ТЕХНОЛОГИИ",
-    question: "Какой язык используется для программирования логики веб-сайта?",
-    answers: ["JavaScript", "HTML", "CSS", "PNG"],
+    question: "Какой язык используется для логики веб-сайта?",
+    answers: [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "PNG"
+    ],
     correct: 0
   },
 
@@ -216,268 +158,87 @@ const questions = [
   },
 
   {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Что хранит данные после выключения компьютера?",
-    answers: [
-      "SSD",
-      "ОЗУ",
-      "Процессор",
-      "Кулер"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Что такое GitHub?",
-    answers: [
-      "Платформа для хранения и совместной работы с кодом",
-      "Игра",
-      "Браузер",
-      "Антивирус"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Какой файл обычно содержит HTML-код?",
-    answers: [
-      "index.html",
-      "style.css",
-      "script.js",
-      "image.png"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Какой файл используется для CSS?",
-    answers: [
-      "style.css",
-      "index.html",
-      "script.js",
-      "data.exe"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Какой файл обычно содержит JavaScript?",
-    answers: [
-      "script.js",
-      "style.css",
-      "index.html",
-      "photo.jpg"
-    ],
-    correct: 0
-  },
-
-  {
-    category: "💻 ТЕХНОЛОГИИ",
-    question: "Что такое браузер?",
-    answers: [
-      "Программа для просмотра сайтов",
-      "Игровая приставка",
-      "Процессор",
-      "Клавиатура"
-    ],
-    correct: 0
-  },
-
-
-  {
     category: "🎬 КИНО",
     question: "Как называется волшебная школа в Гарри Поттере?",
-    answers: ["Хогвартс", "Хогсмит", "Азкабан", "Нарния"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Кто живёт в ананасе под водой?",
-    answers: ["Губка Боб", "Шрек", "Микки", "Симба"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Как зовут льва из мультфильма «Король Лев»?",
-    answers: ["Симба", "Муфаса", "Шрам", "Тимон"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Как называется ледяная принцесса из «Холодного сердца»?",
-    answers: ["Анна", "Эльза", "Рапунцель", "Моана"],
-    correct: 1
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Как зовут зелёного героя из DreamWorks?",
-    answers: ["Шрек", "Халк", "Грут", "Йода"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "В каком фильме есть персонаж Джек Воробей?",
     answers: [
-      "Пираты Карибского моря",
-      "Титаник",
-      "Матрица",
-      "Аватар"
+      "Хогвартс",
+      "Хогсмит",
+      "Азкабан",
+      "Нарния"
     ],
     correct: 0
   },
 
   {
     category: "🎬 КИНО",
-    question: "Как называется страна супергероев Marvel?",
-    answers: ["Marvel Universe", "Hogwarts", "Narnia", "Middle-earth"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Как зовут робота из WALL-E?",
-    answers: ["WALL-E", "EVE", "R2-D2", "BB-8"],
+    question: "Как зовут льва из «Короля Льва»?",
+    answers: [
+      "Симба",
+      "Муфаса",
+      "Шрам",
+      "Тимон"
+    ],
     correct: 0
   },
 
   {
     category: "🎬 КИНО",
     question: "Как зовут главного героя «Матрицы»?",
-    answers: ["Нео", "Тони", "Питер", "Джек"],
-    correct: 0
-  },
-
-  {
-    category: "🎬 КИНО",
-    question: "Как называется школа для юных мутантов в Людях Икс?",
     answers: [
-      "Институт Ксавьера",
-      "Хогвартс",
-      "Академия Старка",
-      "Щ.И.Т."
+      "Нео",
+      "Тони",
+      "Питер",
+      "Джек"
     ],
     correct: 0
   },
 
-
   {
     category: "⚽ СПОРТ",
-    question: "Сколько игроков одной команды находится на поле в футболе?",
-    answers: ["9", "10", "11", "12"],
+    question: "Сколько игроков одной команды на поле в футболе?",
+    answers: [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
     correct: 2
   },
 
   {
     category: "⚽ СПОРТ",
     question: "Сколько колец на олимпийском символе?",
-    answers: ["4", "5", "6", "7"],
+    answers: [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     correct: 1
   },
 
   {
     category: "⚽ СПОРТ",
-    question: "В каком виде спорта используется шайба?",
-    answers: ["Футбол", "Хоккей", "Теннис", "Баскетбол"],
+    question: "В каком спорте используется шайба?",
+    answers: [
+      "Футбол",
+      "Хоккей",
+      "Теннис",
+      "Баскетбол"
+    ],
     correct: 1
   },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Сколько очков обычно дают за гол в футболе?",
-    answers: ["1", "2", "3", "5"],
-    correct: 0
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Как называется площадка для тенниса?",
-    answers: ["Корт", "Ринг", "Трек", "Поле"],
-    correct: 0
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "В каком спорте используется кольцо и мяч?",
-    answers: ["Баскетбол", "Хоккей", "Гольф", "Бокс"],
-    correct: 0
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Как называется начало шахматной партии?",
-    answers: ["Дебют", "Финиш", "Тайм-аут", "Раунд"],
-    correct: 0
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Сколько минут длится обычный футбольный матч без добавленного времени?",
-    answers: ["60", "75", "90", "120"],
-    correct: 2
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Как называется спортивный удар ногой по мячу?",
-    answers: ["Удар", "Подача", "Пас", "Все варианты"],
-    correct: 3
-  },
-
-  {
-    category: "⚽ СПОРТ",
-    question: "Какой спорт связан с Формулой-1?",
-    answers: ["Автоспорт", "Плавание", "Бокс", "Регби"],
-    correct: 0
-  },
-
 
   {
     category: "🏛️ ИСТОРИЯ",
     question: "В каком году человек впервые высадился на Луне?",
-    answers: ["1965", "1969", "1972", "1975"],
-    correct: 1
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Как назывались викинги-мореплаватели?",
-    answers: ["Норманны", "Самураи", "Рыцари", "Легионеры"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Где находились древние пирамиды Гизы?",
-    answers: ["Египет", "Греция", "Италия", "Индия"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Как назывался знаменитый римский амфитеатр?",
-    answers: ["Колизей", "Парфенон", "Кремль", "Акрополь"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Кто был первым человеком на Луне?",
     answers: [
-      "Нил Армстронг",
-      "Юрий Гагарин",
-      "Базз Олдрин",
-      "Илон Маск"
+      "1965",
+      "1969",
+      "1972",
+      "1975"
     ],
-    correct: 0
+    correct: 1
   },
 
   {
@@ -493,102 +254,51 @@ const questions = [
   },
 
   {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Как назывался воин Японии?",
-    answers: ["Самурай", "Викинг", "Гладиатор", "Легионер"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Какой народ построил Колизей?",
-    answers: ["Римляне", "Египтяне", "Викинги", "Майя"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Как назывался правитель Древнего Египта?",
-    answers: ["Фараон", "Царь", "Султан", "Император"],
-    correct: 0
-  },
-
-  {
-    category: "🏛️ ИСТОРИЯ",
-    question: "Как назывались древние египетские письмена?",
-    answers: ["Иероглифы", "Кириллица", "Латынь", "Руны"],
-    correct: 0
-  },
-
-
-  {
     category: "➗ МАТЕМАТИКА",
     question: "Сколько будет 7 × 8?",
-    answers: ["54", "56", "58", "64"],
+    answers: [
+      "54",
+      "56",
+      "58",
+      "64"
+    ],
     correct: 1
   },
 
   {
     category: "➗ МАТЕМАТИКА",
     question: "Сколько будет 100 ÷ 4?",
-    answers: ["20", "25", "30", "40"],
+    answers: [
+      "20",
+      "25",
+      "30",
+      "40"
+    ],
     correct: 1
   },
 
   {
     category: "➗ МАТЕМАТИКА",
     question: "Продолжи: 2, 4, 8, 16, ?",
-    answers: ["20", "24", "32", "36"],
+    answers: [
+      "20",
+      "24",
+      "32",
+      "36"
+    ],
     correct: 2
   },
 
   {
     category: "➗ МАТЕМАТИКА",
     question: "Сколько градусов в полном круге?",
-    answers: ["90°", "180°", "270°", "360°"],
+    answers: [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
     correct: 3
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Сколько будет 15 + 27?",
-    answers: ["40", "41", "42", "43"],
-    correct: 2
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Сколько будет 9 × 9?",
-    answers: ["72", "81", "90", "99"],
-    correct: 1
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Чему равен квадратный корень из 64?",
-    answers: ["6", "7", "8", "9"],
-    correct: 2
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Сколько сторон у пятиугольника?",
-    answers: ["4", "5", "6", "7"],
-    correct: 1
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Сколько будет 200 - 75?",
-    answers: ["115", "120", "125", "130"],
-    correct: 2
-  },
-
-  {
-    category: "➗ МАТЕМАТИКА",
-    question: "Сколько будет 12 × 12?",
-    answers: ["124", "132", "144", "154"],
-    correct: 2
   }
 
 ];
@@ -638,7 +348,7 @@ let inventory = {
 
 
 /* =====================================================
-   ПЕРЕМЕННЫЕ
+   СОСТОЯНИЕ ИГРЫ
 ===================================================== */
 
 let score = 0;
@@ -665,8 +375,6 @@ let fiftyUsed = false;
 
 let answerLocked = false;
 
-let resultTimeout = null;
-
 
 /* =====================================================
    ELEMENTS
@@ -686,25 +394,6 @@ const result =
 
 const categoryScreen =
   document.getElementById("categoryScreen");
-
-
-const playBtn =
-  document.getElementById("playBtn");
-
-const shopBtn =
-  document.getElementById("shopBtn");
-
-const backBtn =
-  document.getElementById("backBtn");
-
-const againBtn =
-  document.getElementById("againBtn");
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const quitBtn =
-  document.getElementById("quitBtn");
 
 
 const question =
@@ -735,9 +424,9 @@ const streakText =
 const livesText =
   document.getElementById("lives");
 
-
 const levelNumber =
   document.getElementById("levelNumber");
+
 
 const menuLevel =
   document.getElementById("menuLevel");
@@ -785,30 +474,11 @@ const otherCount =
 const hardBadge =
   document.getElementById("hardBadge");
 
-
 const categoryChoices =
   document.getElementById("categoryChoices");
 
-const rerollBtn =
-  document.getElementById("rerollBtn");
-
-const cancelHardBtn =
-  document.getElementById("cancelHardBtn");
-
-
 const toast =
   document.getElementById("toast");
-
-
-/* =====================================================
-   СЛОЖНЫЙ УРОВЕНЬ
-===================================================== */
-
-function isHardLevel() {
-
-  return level % 5 === 0;
-
-}
 
 
 /* =====================================================
@@ -848,7 +518,6 @@ function saveData() {
   );
 
   updateUI();
-
 }
 
 
@@ -858,29 +527,21 @@ function saveData() {
 
 function updateUI() {
 
-  menuLevel.textContent =
-    level;
+  menuLevel.textContent = level;
 
-  menuCoins.textContent =
-    coins;
+  menuCoins.textContent = coins;
 
-  menuRecord.textContent =
-    highScore;
+  menuRecord.textContent = highScore;
 
-  shopCoins.textContent =
-    coins;
+  shopCoins.textContent = coins;
 
-  coinsText.textContent =
-    coins;
+  coinsText.textContent = coins;
 
-  scoreText.textContent =
-    score;
+  scoreText.textContent = score;
 
-  streakText.textContent =
-    streak;
+  streakText.textContent = streak;
 
-  levelNumber.textContent =
-    level;
+  levelNumber.textContent = level;
 
 
   livesText.textContent =
@@ -906,18 +567,16 @@ function updateUI() {
 
   otherGameCount.textContent =
     inventory.other;
-
 }
 
 
 /* =====================================================
-   ПЕРЕМЕШИВАНИЕ
+   SHUFFLE
 ===================================================== */
 
 function shuffle(array) {
 
-  const copy =
-    [...array];
+  const copy = [...array];
 
   for (
     let i = copy.length - 1;
@@ -938,10 +597,19 @@ function shuffle(array) {
       copy[j],
       copy[i]
     ];
-
   }
 
   return copy;
+}
+
+
+/* =====================================================
+   СЛОЖНЫЙ ЛИ УРОВЕНЬ
+===================================================== */
+
+function isHardLevel() {
+
+  return level % 5 === 0;
 
 }
 
@@ -965,15 +633,16 @@ function showMenu() {
   categoryScreen.classList.add("hidden");
 
   updateUI();
-
 }
 
 
 /* =====================================================
-   НАЧАЛО
+   НАЧАТЬ ИГРУ
 ===================================================== */
 
 function startGame() {
+
+  clearInterval(timer);
 
   score = 0;
 
@@ -981,13 +650,14 @@ function startGame() {
 
   lives = 3;
 
-  clearInterval(timer);
-
-  result.classList.add("hidden");
+  answerLocked = false;
 
   menu.classList.add("hidden");
 
   shop.classList.add("hidden");
+
+  result.classList.add("hidden");
+
 
   if (isHardLevel()) {
 
@@ -1002,7 +672,6 @@ function startGame() {
     startNormalLevel();
 
   }
-
 }
 
 
@@ -1012,25 +681,19 @@ function startGame() {
 
 function startNormalLevel() {
 
-  hardQuestionIndex = 0;
-
-  currentQuestions = [];
-
-  const randomQuestions =
-    shuffle(questions);
-
-  currentQuestion =
-    randomQuestions[0];
-
-  game.classList.remove("hidden");
-
   hardBadge.classList.add("hidden");
 
-  progressBar.style.width =
-    "100%";
+  progressBar.style.width = "100%";
+
+  currentQuestion =
+    questions[
+      Math.floor(
+        Math.random() *
+        questions.length
+      )
+    ];
 
   showQuestion();
-
 }
 
 
@@ -1048,8 +711,7 @@ function showQuestion() {
 
   time = 15;
 
-  timerCircle.textContent =
-    time;
+  timerCircle.textContent = time;
 
   timerCircle.style.borderColor =
     "#5e7cff";
@@ -1071,13 +733,10 @@ function showQuestion() {
       const button =
         document.createElement("button");
 
-      button.className =
-        "answer";
+      button.className = "answer";
 
       button.textContent =
-        String.fromCharCode(
-          65 + index
-        )
+        String.fromCharCode(65 + index)
         + ". "
         + answerText;
 
@@ -1095,9 +754,7 @@ function showQuestion() {
       );
 
 
-      answers.appendChild(
-        button
-      );
+      answers.appendChild(button);
 
     }
   );
@@ -1106,7 +763,6 @@ function showQuestion() {
   updateUI();
 
   startTimer();
-
 }
 
 
@@ -1140,6 +796,8 @@ function startTimer() {
 
           clearInterval(timer);
 
+          answerLocked = true;
+
           handleWrongAnswer();
 
         }
@@ -1147,12 +805,11 @@ function startTimer() {
       },
       1000
     );
-
 }
 
 
 /* =====================================================
-   ОТВЕТ
+   ПРОВЕРКА ОТВЕТА
 ===================================================== */
 
 function checkAnswer(
@@ -1169,16 +826,12 @@ function checkAnswer(
 
 
   const buttons =
-    document.querySelectorAll(
-      ".answer"
-    );
+    document.querySelectorAll(".answer");
 
 
   buttons.forEach(
     button => {
-
       button.disabled = true;
-
     }
   );
 
@@ -1209,13 +862,11 @@ function checkAnswer(
     handleWrongAnswer();
 
   }
-
 }
 
 
 /* =====================================================
-   ПРАВИЛЬНЫЙ ОТВЕТ
-   ВАЖНО: ЗДЕСЬ ТЕПЕРЬ 2 СЕКУНДЫ
+   ПРАВИЛЬНО
 ===================================================== */
 
 function handleCorrectAnswer() {
@@ -1223,26 +874,17 @@ function handleCorrectAnswer() {
   streak++;
 
   const multiplier =
-    Math.min(
-      streak,
-      5
-    );
-
+    Math.min(streak, 5);
 
   const gained =
     100 * multiplier;
 
-
-  score +=
-    gained;
-
+  score += gained;
 
   coins +=
     10 * multiplier;
 
-
   saveData();
-
 
   showToast(
     "🔥 Правильно! +" +
@@ -1252,8 +894,9 @@ function handleCorrectAnswer() {
 
 
   /*
-    После показа правильного ответа
-    ждём 2 секунды.
+     ВАЖНО:
+     Ждём только 2 секунды,
+     чтобы игрок увидел правильный ответ.
   */
 
   setTimeout(
@@ -1267,67 +910,56 @@ function handleCorrectAnswer() {
 
       } else {
 
-        finishNormalLevel();
+        finishNormalLevel(true);
 
       }
 
     },
     2000
   );
-
 }
 
 
 /* =====================================================
-   НЕПРАВИЛЬНЫЙ ОТВЕТ
-   ВАЖНО: ЗДЕСЬ ТОЖЕ 2 СЕКУНДЫ
+   НЕПРАВИЛЬНО
 ===================================================== */
 
 function handleWrongAnswer() {
 
-  lives = 0;
+  clearInterval(timer);
 
   streak = 0;
 
+  lives = 0;
+
   updateUI();
 
-
-  if (isHardLevel()) {
-
-    showToast(
-      "❌ Ошибка! Сложный уровень провален."
-    );
+  showToast(
+    "❌ Неправильно!"
+  );
 
 
-    /*
-      Показываем правильный ответ
-      и ждём 2 секунды.
-    */
+  /*
+     Правильный ответ уже подсвечен.
+     Через 2 секунды открываем результат.
+  */
 
-    setTimeout(
-      hardFailed,
-      2000
-    );
+  setTimeout(
+    () => {
 
-  } else {
+      if (isHardLevel()) {
 
-    showToast(
-      "❌ Неправильно!"
-    );
+        hardFailed();
 
+      } else {
 
-    /*
-      Показываем правильный ответ
-      и через 2 секунды открываем результат.
-    */
+        finishNormalLevel(false);
 
-    setTimeout(
-      finishNormalLevel,
-      2000
-    );
+      }
 
-  }
-
+    },
+    2000
+  );
 }
 
 
@@ -1335,7 +967,7 @@ function handleWrongAnswer() {
    РЕЗУЛЬТАТ ОБЫЧНОГО УРОВНЯ
 ===================================================== */
 
-function finishNormalLevel() {
+function finishNormalLevel(won) {
 
   clearInterval(timer);
 
@@ -1347,13 +979,15 @@ function finishNormalLevel() {
   document.getElementById(
     "resultIcon"
   ).textContent =
-    score > 0 ? "🎉" : "💪";
+    won ? "🎉" : "💪";
 
 
   document.getElementById(
     "resultTitle"
   ).textContent =
-    "УРОВЕНЬ ПРОЙДЕН!";
+    won
+      ? "УРОВЕНЬ ПРОЙДЕН!"
+      : "ОТВЕТ НЕВЕРНЫЙ";
 
 
   document.getElementById(
@@ -1371,7 +1005,7 @@ function finishNormalLevel() {
   document.getElementById(
     "correctAnswers"
   ).textContent =
-    score > 0 ? "1" : "0";
+    won ? "1/1" : "0/1";
 
 
   document.getElementById(
@@ -1380,31 +1014,24 @@ function finishNormalLevel() {
     level;
 
 
+  document.getElementById(
+    "resultCountdown"
+  ).textContent =
+    "Выбери действие 👇";
+
+
   if (score > highScore) {
 
-    highScore =
-      score;
+    highScore = score;
 
     saveData();
 
   }
 
-
   /*
-    НИКАКОГО АВТОМАТИЧЕСКОГО
-    ПЕРЕХОДА В МЕНЮ НЕТ.
-
-    Игрок сам выбирает:
-    "ИГРАТЬ СНОВА"
-    или
-    "В МЕНЮ".
+     НИКАКОГО setInterval здесь нет.
+     Игрок сам выбирает кнопку.
   */
-
-  document.getElementById(
-    "resultCountdown"
-  ).textContent =
-    "Выбери действие:";
-
 }
 
 
@@ -1424,41 +1051,29 @@ function showCategorySelection() {
 
   result.classList.add("hidden");
 
-  categoryScreen.classList.remove(
-    "hidden"
-  );
-
+  categoryScreen.classList.remove("hidden");
 
   createCategoryChoices();
-
 }
 
 
 /* =====================================================
-   3 КАТЕГОРИИ
+   КАТЕГОРИИ
 ===================================================== */
 
 function createCategoryChoices() {
 
   categoryChoices.innerHTML = "";
 
-
   const randomCategories =
-    shuffle(
-      categories
-    ).slice(
-      0,
-      3
-    );
+    shuffle(categories).slice(0, 3);
 
 
   randomCategories.forEach(
     cat => {
 
       const button =
-        document.createElement(
-          "button"
-        );
+        document.createElement("button");
 
       button.className =
         "category-btn";
@@ -1483,42 +1098,7 @@ function createCategoryChoices() {
 
     }
   );
-
 }
-
-
-/* =====================================================
-   ПЕРЕКРУТКА КАТЕГОРИЙ
-===================================================== */
-
-rerollBtn.addEventListener(
-  "click",
-  () => {
-
-    if (coins < 70) {
-
-      showToast(
-        "❌ Нужно 70 монет!"
-      );
-
-      return;
-
-    }
-
-
-    coins -= 70;
-
-    saveData();
-
-    createCategoryChoices();
-
-
-    showToast(
-      "🔄 Категории изменены!"
-    );
-
-  }
-);
 
 
 /* =====================================================
@@ -1527,25 +1107,47 @@ rerollBtn.addEventListener(
 
 function chooseCategory(cat) {
 
-  selectedCategory =
-    cat;
+  selectedCategory = cat;
 
 
   const categoryQuestions =
     questions.filter(
       q =>
-        q.category ===
-        cat
+        q.category === cat
     );
 
 
   currentQuestions =
     shuffle(
       categoryQuestions
-    ).slice(
-      0,
-      3
-    );
+    ).slice(0, 3);
+
+
+  /*
+     Если в категории меньше 3 вопросов,
+     добираем из общей базы.
+  */
+
+  while (
+    currentQuestions.length < 3
+  ) {
+
+    const extra =
+      questions[
+        Math.floor(
+          Math.random() *
+          questions.length
+        )
+      ];
+
+    if (
+      !currentQuestions.includes(extra)
+    ) {
+
+      currentQuestions.push(extra);
+
+    }
+  }
 
 
   hardQuestionIndex = 0;
@@ -1556,8 +1158,6 @@ function chooseCategory(cat) {
 
   lives = 3;
 
-  streak = 0;
-
 
   categoryScreen.classList.add(
     "hidden"
@@ -1567,14 +1167,9 @@ function chooseCategory(cat) {
     "hidden"
   );
 
-
   hardBadge.classList.remove(
     "hidden"
   );
-
-
-  progressBar.style.width =
-    "33%";
 
 
   currentQuestion =
@@ -1582,12 +1177,11 @@ function chooseCategory(cat) {
 
 
   showHardQuestion();
-
 }
 
 
 /* =====================================================
-   ВОПРОС СЛОЖНОГО УРОВНЯ
+   СЛОЖНЫЙ ВОПРОС
 ===================================================== */
 
 function showHardQuestion() {
@@ -1600,18 +1194,15 @@ function showHardQuestion() {
 
   time = 15;
 
-
   timerCircle.textContent =
     time;
-
 
   timerCircle.style.borderColor =
     "#ff7777";
 
 
   category.textContent =
-    selectedCategory;
-
+    currentQuestion.category;
 
   question.textContent =
     currentQuestion.question;
@@ -1624,17 +1215,13 @@ function showHardQuestion() {
     (answerText, index) => {
 
       const button =
-        document.createElement(
-          "button"
-        );
+        document.createElement("button");
 
       button.className =
         "answer";
 
       button.textContent =
-        String.fromCharCode(
-          65 + index
-        )
+        String.fromCharCode(65 + index)
         + ". "
         + answerText;
 
@@ -1652,9 +1239,7 @@ function showHardQuestion() {
       );
 
 
-      answers.appendChild(
-        button
-      );
+      answers.appendChild(button);
 
     }
   );
@@ -1671,12 +1256,11 @@ function showHardQuestion() {
   updateUI();
 
   startTimer();
-
 }
 
 
 /* =====================================================
-   СЛЕДУЮЩИЙ ВОПРОС СЛОЖНОГО
+   СЛЕДУЮЩИЙ СЛОЖНЫЙ ВОПРОС
 ===================================================== */
 
 function hardNextQuestion() {
@@ -1702,12 +1286,11 @@ function hardNextQuestion() {
 
 
   showHardQuestion();
-
 }
 
 
 /* =====================================================
-   СЛОЖНЫЙ УРОВЕНЬ ПРОЙДЕН
+   СЛОЖНЫЙ ПРОЙДЕН
 ===================================================== */
 
 function hardCompleted() {
@@ -1721,23 +1304,18 @@ function hardCompleted() {
 
   const reward =
     Math.floor(
-      Math.random() *
-      (
-        485 - 200 + 1
-      )
+      Math.random() * 286
     ) + 200;
 
 
   coins += reward;
-
 
   score += 500;
 
 
   if (score > highScore) {
 
-    highScore =
-      score;
+    highScore = score;
 
   }
 
@@ -1781,21 +1359,15 @@ function hardCompleted() {
     level;
 
 
-  /*
-    Автоматического перехода
-    в меню больше нет.
-  */
-
   document.getElementById(
     "resultCountdown"
   ).textContent =
-    "Выбери действие:";
-
+    "🎉 Отлично! Выбери действие 👇";
 }
 
 
 /* =====================================================
-   СЛОЖНЫЙ УРОВЕНЬ ПРОВАЛЕН
+   СЛОЖНЫЙ ПРОВАЛЕН
 ===================================================== */
 
 function hardFailed() {
@@ -1846,8 +1418,7 @@ function hardFailed() {
   document.getElementById(
     "resultCountdown"
   ).textContent =
-    "Попробуй ещё раз или вернись в меню.";
-
+    "Попробуй ещё раз или выйди в меню 👇";
 }
 
 
@@ -1879,9 +1450,7 @@ fiftyBtn.addEventListener(
 
 
     const buttons =
-      document.querySelectorAll(
-        ".answer"
-      );
+      document.querySelectorAll(".answer");
 
 
     let removed = 0;
@@ -1894,9 +1463,7 @@ fiftyBtn.addEventListener(
     ) {
 
       if (
-        i !==
-        currentQuestion.correct
-        &&
+        i !== currentQuestion.correct &&
         removed < 2
       ) {
 
@@ -1993,7 +1560,7 @@ otherBtn.addEventListener(
     if (inventory.other <= 0) {
 
       showToast(
-        "🛒 Купи «Другой вопрос»!"
+        "🛒 Купи другой вопрос!"
       );
 
       return;
@@ -2002,8 +1569,6 @@ otherBtn.addEventListener(
 
 
     inventory.other--;
-
-    saveData();
 
 
     let newQuestion;
@@ -2029,6 +1594,8 @@ otherBtn.addEventListener(
       newQuestion;
 
 
+    saveData();
+
     showQuestion();
 
 
@@ -2044,38 +1611,28 @@ otherBtn.addEventListener(
    МАГАЗИН
 ===================================================== */
 
-shopBtn.addEventListener(
-  "click",
-  () => {
+document
+  .getElementById("shopBtn")
+  .addEventListener(
+    "click",
+    () => {
 
-    menu.classList.add(
-      "hidden"
-    );
+      menu.classList.add("hidden");
 
-    shop.classList.remove(
-      "hidden"
-    );
+      shop.classList.remove("hidden");
 
-    updateUI();
+      updateUI();
 
-  }
-);
+    }
+  );
 
 
-backBtn.addEventListener(
-  "click",
-  () => {
-
-    shop.classList.add(
-      "hidden"
-    );
-
-    menu.classList.remove(
-      "hidden"
-    );
-
-  }
-);
+document
+  .getElementById("backBtn")
+  .addEventListener(
+    "click",
+    showMenu
+  );
 
 
 /* =====================================================
@@ -2157,7 +1714,7 @@ document
 
 
 /* =====================================================
-   ПОКУПКА ДРУГОГО ВОПРОСА
+   ПОКУПКА ДРУГОГО
 ===================================================== */
 
 document
@@ -2196,65 +1753,87 @@ document
 
 
 /* =====================================================
-   ИГРАТЬ
+   НАЧАТЬ
 ===================================================== */
 
-playBtn.addEventListener(
-  "click",
-  startGame
-);
-
-
-againBtn.addEventListener(
-  "click",
-  startGame
-);
+document
+  .getElementById("playBtn")
+  .addEventListener(
+    "click",
+    startGame
+  );
 
 
 /* =====================================================
-   КНОПКА В МЕНЮ
+   ИГРАТЬ СНОВА
 ===================================================== */
 
-menuBtn.addEventListener(
-  "click",
-  () => {
+document
+  .getElementById("againBtn")
+  .addEventListener(
+    "click",
+    () => {
 
-    clearInterval(timer);
+      /*
+         Переход на следующий уровень
+         происходит только после нажатия
+         "ИГРАТЬ СНОВА".
+      */
 
-    showMenu();
+      level++;
 
-  }
-);
+      saveData();
+
+      startGame();
+
+    }
+  );
+
+
+/* =====================================================
+   В МЕНЮ
+===================================================== */
+
+document
+  .getElementById("menuBtn")
+  .addEventListener(
+    "click",
+    () => {
+
+      showMenu();
+
+    }
+  );
 
 
 /* =====================================================
    ВЫЙТИ ИЗ ИГРЫ
 ===================================================== */
 
-quitBtn.addEventListener(
-  "click",
-  () => {
+document
+  .getElementById("quitBtn")
+  .addEventListener(
+    "click",
+    () => {
 
-    clearInterval(timer);
+      clearInterval(timer);
 
-    showMenu();
+      showMenu();
 
-  }
-);
+    }
+  );
 
 
 /* =====================================================
    ОТМЕНА СЛОЖНОГО
 ===================================================== */
 
-cancelHardBtn.addEventListener(
-  "click",
-  () => {
-
-    showMenu();
-
-  }
-);
+document
+  .getElementById("cancelHardBtn")
+  .addEventListener(
+    "click",
+    showMenu
+  );
 
 
 /* =====================================================
@@ -2263,20 +1842,15 @@ cancelHardBtn.addEventListener(
 
 function showToast(text) {
 
-  toast.textContent =
-    text;
+  toast.textContent = text;
 
-  toast.classList.add(
-    "show"
-  );
+  toast.classList.add("show");
 
 
   setTimeout(
     () => {
 
-      toast.classList.remove(
-        "show"
-      );
+      toast.classList.remove("show");
 
     },
     1800
