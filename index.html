@@ -59,7 +59,9 @@
 
     <div class="shop-header">
 
-      <button id="backBtn" class="back-btn">←</button>
+      <button id="backBtn" class="back-btn">
+        ←
+      </button>
 
       <h2>🛒 МАГАЗИН</h2>
 
@@ -77,7 +79,9 @@
 
       <div class="shop-item">
 
-        <div class="ability-icon">✂️</div>
+        <div class="ability-icon">
+          ✂️
+        </div>
 
         <div class="ability-info">
 
@@ -103,7 +107,9 @@
 
       <div class="shop-item">
 
-        <div class="ability-icon">⏱️</div>
+        <div class="ability-icon">
+          ⏱️
+        </div>
 
         <div class="ability-info">
 
@@ -129,7 +135,9 @@
 
       <div class="shop-item">
 
-        <div class="ability-icon">🔄</div>
+        <div class="ability-icon">
+          🔄
+        </div>
 
         <div class="ability-info">
 
@@ -167,8 +175,10 @@
       </button>
 
       <div class="question-number">
+
         УРОВЕНЬ
         <b id="levelNumber">1</b>
+
       </div>
 
       <div class="lives" id="lives">
@@ -232,153 +242,25 @@
     <div class="abilities">
 
       <button id="fiftyBtn">
+
         ✂️ 50/50
-        <span id="fiftyGameCount">0</span>
+
+        <span id="fiftyGameCount">
+          0
+        </span>
+
       </button>
+
 
       <button id="timeBtn">
+
         ⏱️ +10 сек
-        <span id="timeGameCount">0</span>
+
+        <span id="timeGameCount">
+          0
+        </span>
+
       </button>
+
 
       <button id="otherBtn">
-        🔄 Другой
-        <span id="otherGameCount">0</span>
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- ВЫБОР КАТЕГОРИИ -->
-  <section id="categoryScreen" class="screen hidden">
-
-    <div class="category-logo">
-      🔥
-    </div>
-
-    <h1 class="category-title">
-      СЛОЖНЫЙ УРОВЕНЬ
-    </h1>
-
-    <p class="category-subtitle">
-      Выбери категорию для 3 вопросов
-    </p>
-
-    <div class="hard-info">
-      ⚠️ 3 вопроса<br>
-      🏆 Большая награда<br>
-      💰 200–485 монет
-    </div>
-
-    <div id="categoryChoices" class="category-choices"></div>
-
-    <button id="rerollBtn" class="reroll-btn">
-      🔄 ДРУГИЕ КАТЕГОРИИ — 70 💰
-    </button>
-
-    <button id="cancelHardBtn" class="secondary-btn">
-      ← В МЕНЮ
-    </button>
-
-  </section>
-
-
-  <!-- РЕЗУЛЬТАТ -->
-  <section id="result" class="screen hidden">
-
-    <div id="resultIcon" class="result-icon">
-      🎉
-    </div>
-
-    <h1 id="resultTitle">
-      УРОВЕНЬ ПРОЙДЕН!
-    </h1>
-
-    <p class="result-text">
-      Результат
-    </p>
-
-    <div class="big-score">
-
-      <span id="finalScore">
-        0
-      </span>
-
-      <small>
-        очков
-      </small>
-
-    </div>
-
-
-    <div class="result-stats">
-
-      <div>
-
-        <b id="correctAnswers">
-          0
-        </b>
-
-        <span>
-          Правильных
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <b id="finalCoins">
-          0
-        </b>
-
-        <span>
-          Монеты
-        </span>
-
-      </div>
-
-
-      <div>
-
-        <b id="finalLevel">
-          1
-        </b>
-
-        <span>
-          Уровень
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <!-- БЕЗ ТАЙМЕРА -->
-
-    <div id="resultCountdown" class="countdown">
-      Выбери действие:
-    </div>
-
-
-    <button id="againBtn" class="main-btn">
-      🎮 ИГРАТЬ СНОВА
-    </button>
-
-    <button id="menuBtn" class="secondary-btn">
-      В МЕНЮ
-    </button>
-
-  </section>
-
-</div>
-
-
-<div id="toast"></div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
