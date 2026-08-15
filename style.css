@@ -11,7 +11,9 @@ body {
 }
 
 body {
+
   font-family: Arial, sans-serif;
+
   min-height: 100vh;
 
   background:
@@ -26,44 +28,66 @@ body {
 }
 
 button {
+
   font-family: inherit;
+
   cursor: pointer;
+
   -webkit-tap-highlight-color: transparent;
 }
 
 .app {
+
   width: 100%;
+
   max-width: 600px;
+
   min-height: 100vh;
+
   margin: auto;
+
   padding: 20px;
 }
 
 .screen {
-  min-height: calc(100vh - 40px);
+
+  min-height:
+    calc(100vh - 40px);
 }
 
 .hidden {
+
   display: none !important;
 }
 
 
-/* МЕНЮ */
+/* =========================
+   МЕНЮ
+========================= */
 
 #menu {
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
+
   text-align: center;
 }
 
 .logo {
+
   width: 90px;
+
   height: 90px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background:
@@ -85,51 +109,69 @@ button {
 }
 
 h1 {
+
   font-size: 42px;
+
   line-height: .95;
+
   letter-spacing: 3px;
 }
 
 h1 span {
+
   color: #708cff;
 }
 
 .subtitle {
+
   color: #9ca8d4;
+
   margin-top: 15px;
 }
 
 .menu-card {
+
   width: 100%;
+
   max-width: 420px;
 
   margin: 35px 0 15px;
+
   padding: 18px 10px;
 
   border: 1px solid #2c3e78;
+
   border-radius: 18px;
 
-  background: rgba(20, 29, 70, .7);
+  background:
+    rgba(20, 29, 70, .7);
 
   display: flex;
+
   justify-content: space-around;
 
   line-height: 1.7;
+
   gap: 5px;
 }
 
 .menu-card b {
+
   color: #718cff;
+
   font-size: 19px;
 }
 
 .main-btn {
+
   width: 100%;
+
   max-width: 380px;
 
   padding: 18px;
 
   border: 0;
+
   border-radius: 15px;
 
   background:
@@ -140,7 +182,9 @@ h1 span {
     );
 
   color: white;
+
   font-weight: bold;
+
   font-size: 16px;
 
   box-shadow:
@@ -149,90 +193,125 @@ h1 span {
 }
 
 .main-btn:active {
+
   transform: scale(.98);
 }
 
 .shop-open {
+
   width: 100%;
+
   max-width: 380px;
 
   margin-top: 10px;
+
   padding: 16px;
 
   border: 1px solid #5268a9;
+
   border-radius: 15px;
 
   background: #111b40;
+
   color: #b7c3ee;
 
   font-weight: bold;
 }
 
 .small {
+
   margin-top: 18px;
+
   color: #68749f;
+
   font-size: 12px;
 }
 
 
-/* МАГАЗИН */
+/* =========================
+   МАГАЗИН
+========================= */
 
 #shop {
+
   padding-top: 10px;
 }
 
 .shop-header {
+
   display: grid;
-  grid-template-columns: 45px 1fr auto;
+
+  grid-template-columns:
+    45px 1fr auto;
 
   align-items: center;
+
   gap: 10px;
 
   margin-bottom: 15px;
 }
 
 .shop-header h2 {
+
   text-align: center;
+
   font-size: 21px;
 }
 
 .back-btn,
 .icon-btn {
+
   width: 42px;
+
   height: 42px;
 
   border: 1px solid #334477;
+
   border-radius: 12px;
 
   background: #111a3c;
+
   color: white;
 
   font-size: 22px;
 }
 
 .shop-money {
+
   color: #ffd84d;
+
   white-space: nowrap;
 }
 
 .shop-description {
+
   text-align: center;
+
   color: #8895bd;
+
   margin-bottom: 25px;
+
   font-size: 14px;
 }
 
 .shop-list {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 12px;
 }
 
 .shop-item {
+
   display: grid;
-  grid-template-columns: 55px 1fr auto;
+
+  grid-template-columns:
+    55px 1fr auto;
 
   align-items: center;
+
   gap: 12px;
 
   padding: 15px;
@@ -245,99 +324,136 @@ h1 span {
     );
 
   border: 1px solid #2b3c76;
+
   border-radius: 18px;
 }
 
 .ability-icon {
+
   width: 52px;
+
   height: 52px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #202d61;
+
   border-radius: 15px;
 
   font-size: 26px;
 }
 
 .ability-info h3 {
+
   font-size: 16px;
+
   margin-bottom: 5px;
 }
 
 .ability-info p {
+
   color: #7e8bb5;
+
   font-size: 11px;
+
   line-height: 1.4;
+
   margin-bottom: 5px;
 }
 
 .ability-info span {
+
   color: #aeb9df;
+
   font-size: 11px;
 }
 
 .ability-info span b {
+
   color: #718cff;
 }
 
 .buy-btn {
+
   padding: 11px 9px;
 
   border: 1px solid #657eff;
+
   border-radius: 11px;
 
   background: #182552;
+
   color: #91a3ff;
 
   font-weight: bold;
+
   white-space: nowrap;
 }
 
 
-/* ИГРА */
+/* =========================
+   ИГРА
+========================= */
 
 #game {
+
   padding-top: 5px;
 }
 
 header {
+
   display: grid;
-  grid-template-columns: 45px 1fr auto;
+
+  grid-template-columns:
+    45px 1fr auto;
 
   align-items: center;
+
   gap: 10px;
 }
 
 .question-number {
+
   text-align: center;
+
   color: #8996c3;
+
   font-size: 13px;
 }
 
 .question-number b {
+
   color: white;
 }
 
 .lives {
+
   font-size: 17px;
+
   letter-spacing: -4px;
 }
 
 .progress {
+
   height: 6px;
+
   margin-top: 18px;
 
   background: #172247;
+
   border-radius: 10px;
 
   overflow: hidden;
 }
 
 #progressBar {
+
   width: 0%;
+
   height: 100%;
 
   background:
@@ -351,7 +467,9 @@ header {
 }
 
 .stats {
+
   display: flex;
+
   justify-content: space-between;
 
   margin: 20px 0;
@@ -360,28 +478,37 @@ header {
 }
 
 .stats b {
+
   color: white;
 }
 
 .timer {
+
   display: flex;
+
   justify-content: center;
 
   margin: 10px 0 20px;
 }
 
 #timerCircle {
+
   width: 70px;
+
   height: 70px;
 
   border-radius: 50%;
+
   border: 5px solid #5e7cff;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 25px;
+
   font-weight: bold;
 
   box-shadow:
@@ -390,6 +517,7 @@ header {
 }
 
 .question-card {
+
   padding: 25px 20px;
 
   background:
@@ -400,6 +528,7 @@ header {
     );
 
   border: 1px solid #2c3d78;
+
   border-radius: 20px;
 
   text-align: center;
@@ -408,8 +537,11 @@ header {
 }
 
 #category {
+
   color: #6e8cff;
+
   font-size: 11px;
+
   font-weight: bold;
 
   letter-spacing: 2px;
@@ -418,14 +550,18 @@ header {
 }
 
 #question {
+
   font-size: 22px;
+
   line-height: 1.35;
 }
 
 .hard-badge {
+
   display: inline-block;
 
   margin-bottom: 12px;
+
   padding: 7px 12px;
 
   border-radius: 20px;
@@ -433,4 +569,361 @@ header {
   background:
     rgba(255, 91, 91, .15);
 
-  color: #ff
+  color: #ff7777;
+
+  font-size: 11px;
+
+  font-weight: bold;
+}
+
+.answers {
+
+  display: grid;
+
+  gap: 10px;
+}
+
+.answer {
+
+  width: 100%;
+
+  padding: 17px;
+
+  border-radius: 14px;
+
+  border: 1px solid #2d3d70;
+
+  background: #101a3c;
+
+  color: white;
+
+  text-align: left;
+
+  font-size: 15px;
+
+  transition: .2s;
+}
+
+.answer:active {
+
+  transform: scale(.98);
+}
+
+.answer.correct {
+
+  background: #0e633f;
+
+  border-color: #32e99b;
+}
+
+.answer.wrong {
+
+  background: #701d35;
+
+  border-color: #ff5577;
+}
+
+.answer:disabled {
+
+  cursor: default;
+}
+
+
+/* =========================
+   СПОСОБНОСТИ
+========================= */
+
+.abilities {
+
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.abilities button {
+
+  flex: 1;
+
+  min-height: 52px;
+
+  padding: 7px;
+
+  border: 1px solid #334477;
+
+  border-radius: 12px;
+
+  background: #0d1533;
+
+  color: #aeb9e4;
+
+  font-size: 12px;
+}
+
+.abilities button span {
+
+  display: block;
+
+  margin-top: 3px;
+
+  color: #6f8cff;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   ВЫБОР КАТЕГОРИИ
+========================= */
+
+#categoryScreen {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.category-logo {
+
+  font-size: 70px;
+
+  margin-bottom: 15px;
+}
+
+.category-title {
+
+  font-size: 30px;
+
+  color: #ff7777;
+}
+
+.category-subtitle {
+
+  margin-top: 12px;
+
+  color: #929ec7;
+}
+
+.hard-info {
+
+  margin: 20px 0;
+
+  padding: 15px 25px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 90, 90, .1);
+
+  border: 1px solid #51314c;
+
+  line-height: 1.8;
+
+  color: #c3c9e3;
+}
+
+.category-choices {
+
+  width: 100%;
+
+  display: grid;
+
+  gap: 12px;
+}
+
+.category-btn {
+
+  width: 100%;
+
+  padding: 19px;
+
+  border: 1px solid #40558d;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #17234d,
+      #0d1533
+    );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+}
+
+.category-btn:active {
+
+  transform: scale(.98);
+}
+
+.reroll-btn {
+
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 15px;
+
+  border: 1px solid #78662c;
+
+  border-radius: 14px;
+
+  background: #302a14;
+
+  color: #ffd84d;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   РЕЗУЛЬТАТ
+========================= */
+
+#result {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.result-icon {
+
+  font-size: 70px;
+
+  margin-bottom: 20px;
+}
+
+#resultTitle {
+
+  font-size: 30px;
+}
+
+.result-text {
+
+  color: #8895c0;
+
+  margin-top: 15px;
+}
+
+.big-score {
+
+  margin: 20px 0;
+}
+
+.big-score span {
+
+  display: block;
+
+  font-size: 70px;
+
+  font-weight: bold;
+
+  color: #718bff;
+}
+
+.big-score small {
+
+  color: #8793bc;
+}
+
+.result-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  width: 100%;
+
+  max-width: 400px;
+
+  margin-bottom: 20px;
+}
+
+.result-stats div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.result-stats b {
+
+  font-size: 23px;
+}
+
+.result-stats span {
+
+  color: #7885b1;
+
+  font-size: 11px;
+}
+
+.countdown {
+
+  color: #aeb9df;
+
+  margin-bottom: 15px;
+
+  font-size: 14px;
+}
+
+.secondary-btn {
+
+  width: 100%;
+
+  max-width: 380px;
+
+  padding: 15px;
+
+  margin-top: 10px;
+
+  border: 1px solid #334477;
+
+  background: transparent;
+
+  color: #9da9d2;
+
+  border-radius: 14px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+#toast {
+
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 30px;
+
+  transform:
+    translate(-50%, 100px);
+
+  padding: 13px 20px;
+
+  border-radius: 12px;
+
+  background: #182
