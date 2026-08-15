@@ -1264,7 +1264,7 @@ function hardCompleted() {
     highScore = score;
 
   }
-
+level++;
   saveData();
 
   document.getElementById(
@@ -1671,21 +1671,6 @@ document
 ===================================================== */
 
 document
-  .getElementById("againBtn")
-  .addEventListener(
-    "click",
-    () => {
-
-      /*
-        1 → 2
-        2 → 3
-        3 → 4
-        4 → 5 🔥
-        5 → 6
-        9 → 10 🔥
-      */
-
-      document
   .getElementById("againBtn")
   .addEventListener(
     "click",
