@@ -998,10 +998,6 @@ function finishNormalLevel(won) {
   ).textContent =
     won ? "1/1" : "0/1";
 
-  document.getElementById(
-    "finalLevel"
-  ).textContent =
-    level;
 
   document.getElementById(
     "resultCountdown"
@@ -1011,15 +1007,17 @@ function finishNormalLevel(won) {
       : "❌ Попробуй ещё раз";
 
   if (score > highScore) {
-
     highScore = score;
-
   }
-if (won) {
-  level++;
-}
    
-  saveData();
+   if (won) {
+    level++;
+}
+
+saveData();
+
+document.getElementById("finalLevel").textContent = level;
+   
 }
 
 
@@ -1687,14 +1685,17 @@ document
         9 → 10 🔥
       */
 
-      level++;
-
-      saveData();
+      document
+  .getElementById("againBtn")
+  .addEventListener(
+    "click",
+    () => {
 
       startGame();
 
     }
   );
+
 
 
 /* =====================================================
