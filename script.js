@@ -1015,7 +1015,10 @@ function finishNormalLevel(won) {
     highScore = score;
 
   }
-
+if (won) {
+  level++;
+}
+   
   saveData();
 }
 
