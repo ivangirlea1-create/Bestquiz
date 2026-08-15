@@ -1,5 +1,11 @@
 /* =====================================================
    БИТВА ЗНАНИЙ
+   Версия с уровнями до 1000+
+===================================================== */
+
+
+/* =====================================================
+   ВОПРОСЫ
 ===================================================== */
 
 const questions = [
@@ -51,6 +57,13 @@ const questions = [
     question: "Как называется детёныш лягушки?",
     answers: ["Головастик", "Личинка", "Малёк", "Куколка"],
     correct: 0
+  },
+
+  {
+    category: "🌿 ПРИРОДА",
+    question: "Какой цветок обычно ассоциируется с подсолнцем?",
+    answers: ["Роза", "Подсолнечник", "Тюльпан", "Лилия"],
+    correct: 1
   },
 
   {
@@ -204,6 +217,18 @@ const questions = [
 
   {
     category: "💻 ТЕХНОЛОГИИ",
+    question: "Что хранит данные после выключения компьютера?",
+    answers: [
+      "SSD",
+      "ОЗУ",
+      "Процессор",
+      "Кулер"
+    ],
+    correct: 0
+  },
+
+  {
+    category: "💻 ТЕХНОЛОГИИ",
     question: "Что такое GitHub?",
     answers: [
       "Платформа для хранения и совместной работы с кодом",
@@ -312,6 +337,13 @@ const questions = [
 
   {
     category: "🎬 КИНО",
+    question: "Как называется страна супергероев Marvel?",
+    answers: ["Marvel Universe", "Hogwarts", "Narnia", "Middle-earth"],
+    correct: 0
+  },
+
+  {
+    category: "🎬 КИНО",
     question: "Как зовут робота из WALL-E?",
     answers: ["WALL-E", "EVE", "R2-D2", "BB-8"],
     correct: 0
@@ -321,6 +353,18 @@ const questions = [
     category: "🎬 КИНО",
     question: "Как зовут главного героя «Матрицы»?",
     answers: ["Нео", "Тони", "Питер", "Джек"],
+    correct: 0
+  },
+
+  {
+    category: "🎬 КИНО",
+    question: "Как называется школа для юных мутантов в Людях Икс?",
+    answers: [
+      "Институт Ксавьера",
+      "Хогвартс",
+      "Академия Старка",
+      "Щ.И.Т."
+    ],
     correct: 0
   },
 
@@ -381,12 +425,33 @@ const questions = [
     correct: 2
   },
 
+  {
+    category: "⚽ СПОРТ",
+    question: "Как называется спортивный удар ногой по мячу?",
+    answers: ["Удар", "Подача", "Пас", "Все варианты"],
+    correct: 3
+  },
+
+  {
+    category: "⚽ СПОРТ",
+    question: "Какой спорт связан с Формулой-1?",
+    answers: ["Автоспорт", "Плавание", "Бокс", "Регби"],
+    correct: 0
+  },
+
 
   {
     category: "🏛️ ИСТОРИЯ",
     question: "В каком году человек впервые высадился на Луне?",
     answers: ["1965", "1969", "1972", "1975"],
     correct: 1
+  },
+
+  {
+    category: "🏛️ ИСТОРИЯ",
+    question: "Как назывались викинги-мореплаватели?",
+    answers: ["Норманны", "Самураи", "Рыцари", "Легионеры"],
+    correct: 0
   },
 
   {
@@ -445,6 +510,13 @@ const questions = [
     category: "🏛️ ИСТОРИЯ",
     question: "Как назывался правитель Древнего Египта?",
     answers: ["Фараон", "Царь", "Султан", "Император"],
+    correct: 0
+  },
+
+  {
+    category: "🏛️ ИСТОРИЯ",
+    question: "Как назывались древние египетские письмена?",
+    answers: ["Иероглифы", "Кириллица", "Латынь", "Руны"],
     correct: 0
   },
 
@@ -522,6 +594,10 @@ const questions = [
 ];
 
 
+/* =====================================================
+   КАТЕГОРИИ
+===================================================== */
+
 const categories = [
   "🌿 ПРИРОДА",
   "🎮 ИГРЫ",
@@ -533,7 +609,9 @@ const categories = [
 ];
 
 
-/* СОХРАНЕНИЕ */
+/* =====================================================
+   СОХРАНЕНИЕ
+===================================================== */
 
 let level =
   Number(localStorage.getItem("quizLevel")) || 1;
@@ -543,6 +621,7 @@ let highScore =
 
 let coins =
   Number(localStorage.getItem("quizCoins")) || 0;
+
 
 let inventory = {
 
@@ -558,28 +637,40 @@ let inventory = {
 };
 
 
-/* ПЕРЕМЕННЫЕ */
+/* =====================================================
+   ПЕРЕМЕННЫЕ
+===================================================== */
 
 let score = 0;
+
 let streak = 0;
+
 let lives = 3;
 
 let time = 15;
+
 let timer = null;
 
 let currentQuestion = null;
+
 let currentQuestions = [];
 
 let hardQuestionIndex = 0;
+
 let hardCorrect = 0;
 
 let selectedCategory = "";
 
 let fiftyUsed = false;
+
 let answerLocked = false;
 
+let resultTimeout = null;
 
-/* ELEMENTS */
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const menu =
   document.getElementById("menu");
@@ -595,6 +686,7 @@ const result =
 
 const categoryScreen =
   document.getElementById("categoryScreen");
+
 
 const playBtn =
   document.getElementById("playBtn");
@@ -614,6 +706,7 @@ const menuBtn =
 const quitBtn =
   document.getElementById("quitBtn");
 
+
 const question =
   document.getElementById("question");
 
@@ -629,6 +722,7 @@ const timerCircle =
 const progressBar =
   document.getElementById("progressBar");
 
+
 const coinsText =
   document.getElementById("coins");
 
@@ -640,6 +734,7 @@ const streakText =
 
 const livesText =
   document.getElementById("lives");
+
 
 const levelNumber =
   document.getElementById("levelNumber");
@@ -656,6 +751,7 @@ const menuRecord =
 const shopCoins =
   document.getElementById("shopCoins");
 
+
 const fiftyBtn =
   document.getElementById("fiftyBtn");
 
@@ -664,6 +760,7 @@ const timeBtn =
 
 const otherBtn =
   document.getElementById("otherBtn");
+
 
 const fiftyGameCount =
   document.getElementById("fiftyGameCount");
@@ -674,6 +771,7 @@ const timeGameCount =
 const otherGameCount =
   document.getElementById("otherGameCount");
 
+
 const fiftyCount =
   document.getElementById("fiftyCount");
 
@@ -683,8 +781,10 @@ const timeCount =
 const otherCount =
   document.getElementById("otherCount");
 
+
 const hardBadge =
   document.getElementById("hardBadge");
+
 
 const categoryChoices =
   document.getElementById("categoryChoices");
@@ -695,6 +795,7 @@ const rerollBtn =
 const cancelHardBtn =
   document.getElementById("cancelHardBtn");
 
+
 const toast =
   document.getElementById("toast");
 
@@ -704,12 +805,14 @@ const toast =
 ===================================================== */
 
 function isHardLevel() {
+
   return level % 5 === 0;
+
 }
 
 
 /* =====================================================
-   SAVE
+   СОХРАНЕНИЕ
 ===================================================== */
 
 function saveData() {
@@ -745,6 +848,7 @@ function saveData() {
   );
 
   updateUI();
+
 }
 
 
@@ -754,21 +858,35 @@ function saveData() {
 
 function updateUI() {
 
-  menuLevel.textContent = level;
-  menuCoins.textContent = coins;
-  menuRecord.textContent = highScore;
+  menuLevel.textContent =
+    level;
 
-  shopCoins.textContent = coins;
+  menuCoins.textContent =
+    coins;
 
-  coinsText.textContent = coins;
-  scoreText.textContent = score;
-  streakText.textContent = streak;
+  menuRecord.textContent =
+    highScore;
 
-  levelNumber.textContent = level;
+  shopCoins.textContent =
+    coins;
+
+  coinsText.textContent =
+    coins;
+
+  scoreText.textContent =
+    score;
+
+  streakText.textContent =
+    streak;
+
+  levelNumber.textContent =
+    level;
+
 
   livesText.textContent =
     "❤️".repeat(lives) +
     "🖤".repeat(3 - lives);
+
 
   fiftyCount.textContent =
     inventory.fifty;
@@ -779,6 +897,7 @@ function updateUI() {
   otherCount.textContent =
     inventory.other;
 
+
   fiftyGameCount.textContent =
     inventory.fifty;
 
@@ -787,16 +906,18 @@ function updateUI() {
 
   otherGameCount.textContent =
     inventory.other;
+
 }
 
 
 /* =====================================================
-   SHUFFLE
+   ПЕРЕМЕШИВАНИЕ
 ===================================================== */
 
 function shuffle(array) {
 
-  const copy = [...array];
+  const copy =
+    [...array];
 
   for (
     let i = copy.length - 1;
@@ -817,9 +938,11 @@ function shuffle(array) {
       copy[j],
       copy[i]
     ];
+
   }
 
   return copy;
+
 }
 
 
@@ -834,11 +957,15 @@ function showMenu() {
   menu.classList.remove("hidden");
 
   shop.classList.add("hidden");
+
   game.classList.add("hidden");
+
   result.classList.add("hidden");
+
   categoryScreen.classList.add("hidden");
 
   updateUI();
+
 }
 
 
@@ -849,13 +976,17 @@ function showMenu() {
 function startGame() {
 
   score = 0;
+
   streak = 0;
+
   lives = 3;
 
   clearInterval(timer);
 
   result.classList.add("hidden");
+
   menu.classList.add("hidden");
+
   shop.classList.add("hidden");
 
   if (isHardLevel()) {
@@ -869,7 +1000,9 @@ function startGame() {
     game.classList.remove("hidden");
 
     startNormalLevel();
+
   }
+
 }
 
 
@@ -879,18 +1012,25 @@ function startGame() {
 
 function startNormalLevel() {
 
+  hardQuestionIndex = 0;
+
   currentQuestions = [];
 
+  const randomQuestions =
+    shuffle(questions);
+
   currentQuestion =
-    shuffle(questions)[0];
+    randomQuestions[0];
 
   game.classList.remove("hidden");
 
   hardBadge.classList.add("hidden");
 
-  progressBar.style.width = "100%";
+  progressBar.style.width =
+    "100%";
 
   showQuestion();
+
 }
 
 
@@ -903,14 +1043,17 @@ function showQuestion() {
   clearInterval(timer);
 
   answerLocked = false;
+
   fiftyUsed = false;
 
   time = 15;
 
-  timerCircle.textContent = time;
+  timerCircle.textContent =
+    time;
 
   timerCircle.style.borderColor =
     "#5e7cff";
+
 
   category.textContent =
     currentQuestion.category;
@@ -918,7 +1061,9 @@ function showQuestion() {
   question.textContent =
     currentQuestion.question;
 
+
   answers.innerHTML = "";
+
 
   currentQuestion.answers.forEach(
     (answerText, index) => {
@@ -926,32 +1071,47 @@ function showQuestion() {
       const button =
         document.createElement("button");
 
-      button.className = "answer";
+      button.className =
+        "answer";
 
       button.textContent =
-        String.fromCharCode(65 + index) +
-        ". " +
-        answerText;
+        String.fromCharCode(
+          65 + index
+        )
+        + ". "
+        + answerText;
+
 
       button.addEventListener(
         "click",
         () => {
-          checkAnswer(index, button);
+
+          checkAnswer(
+            index,
+            button
+          );
+
         }
       );
 
-      answers.appendChild(button);
+
+      answers.appendChild(
+        button
+      );
+
     }
   );
+
 
   updateUI();
 
   startTimer();
+
 }
 
 
 /* =====================================================
-   ТАЙМЕР ВОПРОСА
+   ТАЙМЕР
 ===================================================== */
 
 function startTimer() {
@@ -967,22 +1127,27 @@ function startTimer() {
         timerCircle.textContent =
           time;
 
+
         if (time <= 5) {
 
           timerCircle.style.borderColor =
             "#ff5577";
+
         }
+
 
         if (time <= 0) {
 
           clearInterval(timer);
 
           handleWrongAnswer();
+
         }
 
       },
       1000
     );
+
 }
 
 
@@ -1002,17 +1167,25 @@ function checkAnswer(
 
   clearInterval(timer);
 
+
   const buttons =
-    document.querySelectorAll(".answer");
+    document.querySelectorAll(
+      ".answer"
+    );
+
 
   buttons.forEach(
     button => {
+
       button.disabled = true;
+
     }
   );
 
+
   if (
-    index === currentQuestion.correct
+    index ===
+    currentQuestion.correct
   ) {
 
     selectedButton.classList.add(
@@ -1034,13 +1207,15 @@ function checkAnswer(
     );
 
     handleWrongAnswer();
+
   }
+
 }
 
 
 /* =====================================================
-   ПРАВИЛЬНО
-   ПОКАЗЫВАЕМ 2 СЕКУНДЫ
+   ПРАВИЛЬНЫЙ ОТВЕТ
+   ВАЖНО: ЗДЕСЬ ТЕПЕРЬ 2 СЕКУНДЫ
 ===================================================== */
 
 function handleCorrectAnswer() {
@@ -1048,17 +1223,26 @@ function handleCorrectAnswer() {
   streak++;
 
   const multiplier =
-    Math.min(streak, 5);
+    Math.min(
+      streak,
+      5
+    );
+
 
   const gained =
     100 * multiplier;
 
-  score += gained;
+
+  score +=
+    gained;
+
 
   coins +=
     10 * multiplier;
 
+
   saveData();
+
 
   showToast(
     "🔥 Правильно! +" +
@@ -1068,40 +1252,41 @@ function handleCorrectAnswer() {
 
 
   /*
-    ВАЖНО:
-    Было 5000 мс.
-    Теперь 2000 мс.
+    После показа правильного ответа
+    ждём 2 секунды.
   */
 
-  if (isHardLevel()) {
+  setTimeout(
+    () => {
 
-    hardCorrect++;
+      if (isHardLevel()) {
 
-    setTimeout(
-      hardNextQuestion,
-      2000
-    );
+        hardCorrect++;
 
-  } else {
+        hardNextQuestion();
 
-    setTimeout(
-      finishNormalLevel,
-      2000
-    );
-  }
+      } else {
+
+        finishNormalLevel();
+
+      }
+
+    },
+    2000
+  );
+
 }
 
 
 /* =====================================================
-   НЕПРАВИЛЬНО
-   ПОКАЗЫВАЕМ 2 СЕКУНДЫ
+   НЕПРАВИЛЬНЫЙ ОТВЕТ
+   ВАЖНО: ЗДЕСЬ ТОЖЕ 2 СЕКУНДЫ
 ===================================================== */
 
 function handleWrongAnswer() {
 
-  answerLocked = true;
-
   lives = 0;
+
   streak = 0;
 
   updateUI();
@@ -1112,6 +1297,12 @@ function handleWrongAnswer() {
     showToast(
       "❌ Ошибка! Сложный уровень провален."
     );
+
+
+    /*
+      Показываем правильный ответ
+      и ждём 2 секунды.
+    */
 
     setTimeout(
       hardFailed,
@@ -1124,11 +1315,19 @@ function handleWrongAnswer() {
       "❌ Неправильно!"
     );
 
+
+    /*
+      Показываем правильный ответ
+      и через 2 секунды открываем результат.
+    */
+
     setTimeout(
       finishNormalLevel,
       2000
     );
+
   }
+
 }
 
 
@@ -1183,25 +1382,29 @@ function finishNormalLevel() {
 
   if (score > highScore) {
 
-    highScore = score;
+    highScore =
+      score;
 
     saveData();
+
   }
 
 
   /*
-    НЕТ ТАЙМЕРА.
+    НИКАКОГО АВТОМАТИЧЕСКОГО
+    ПЕРЕХОДА В МЕНЮ НЕТ.
 
     Игрок сам выбирает:
-    ИГРАТЬ СНОВА
+    "ИГРАТЬ СНОВА"
     или
-    В МЕНЮ
+    "В МЕНЮ".
   */
 
   document.getElementById(
     "resultCountdown"
   ).textContent =
     "Выбери действие:";
+
 }
 
 
@@ -1214,28 +1417,48 @@ function showCategorySelection() {
   clearInterval(timer);
 
   menu.classList.add("hidden");
+
   shop.classList.add("hidden");
+
   game.classList.add("hidden");
+
   result.classList.add("hidden");
 
-  categoryScreen.classList.remove("hidden");
+  categoryScreen.classList.remove(
+    "hidden"
+  );
+
 
   createCategoryChoices();
+
 }
 
+
+/* =====================================================
+   3 КАТЕГОРИИ
+===================================================== */
 
 function createCategoryChoices() {
 
   categoryChoices.innerHTML = "";
 
+
   const randomCategories =
-    shuffle(categories).slice(0, 3);
+    shuffle(
+      categories
+    ).slice(
+      0,
+      3
+    );
+
 
   randomCategories.forEach(
     cat => {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
 
       button.className =
         "category-btn";
@@ -1243,16 +1466,24 @@ function createCategoryChoices() {
       button.textContent =
         cat;
 
+
       button.addEventListener(
         "click",
         () => {
+
           chooseCategory(cat);
+
         }
       );
 
-      categoryChoices.appendChild(button);
+
+      categoryChoices.appendChild(
+        button
+      );
+
     }
   );
+
 }
 
 
@@ -1271,7 +1502,9 @@ rerollBtn.addEventListener(
       );
 
       return;
+
     }
+
 
     coins -= 70;
 
@@ -1279,9 +1512,11 @@ rerollBtn.addEventListener(
 
     createCategoryChoices();
 
+
     showToast(
       "🔄 Категории изменены!"
     );
+
   }
 );
 
@@ -1292,24 +1527,37 @@ rerollBtn.addEventListener(
 
 function chooseCategory(cat) {
 
-  selectedCategory = cat;
+  selectedCategory =
+    cat;
+
 
   const categoryQuestions =
     questions.filter(
       q =>
-        q.category === cat
+        q.category ===
+        cat
     );
 
+
   currentQuestions =
-    shuffle(categoryQuestions)
-      .slice(0, 3);
+    shuffle(
+      categoryQuestions
+    ).slice(
+      0,
+      3
+    );
+
 
   hardQuestionIndex = 0;
+
   hardCorrect = 0;
 
   score = 0;
+
   lives = 3;
+
   streak = 0;
+
 
   categoryScreen.classList.add(
     "hidden"
@@ -1319,14 +1567,22 @@ function chooseCategory(cat) {
     "hidden"
   );
 
+
   hardBadge.classList.remove(
     "hidden"
   );
 
+
+  progressBar.style.width =
+    "33%";
+
+
   currentQuestion =
     currentQuestions[0];
 
+
   showHardQuestion();
+
 }
 
 
@@ -1339,46 +1595,67 @@ function showHardQuestion() {
   clearInterval(timer);
 
   answerLocked = false;
+
   fiftyUsed = false;
 
   time = 15;
 
+
   timerCircle.textContent =
     time;
+
 
   timerCircle.style.borderColor =
     "#ff7777";
 
+
   category.textContent =
     selectedCategory;
+
 
   question.textContent =
     currentQuestion.question;
 
+
   answers.innerHTML = "";
+
 
   currentQuestion.answers.forEach(
     (answerText, index) => {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
 
       button.className =
         "answer";
 
       button.textContent =
-        String.fromCharCode(65 + index) +
-        ". " +
-        answerText;
+        String.fromCharCode(
+          65 + index
+        )
+        + ". "
+        + answerText;
+
 
       button.addEventListener(
         "click",
         () => {
-          checkAnswer(index, button);
+
+          checkAnswer(
+            index,
+            button
+          );
+
         }
       );
 
-      answers.appendChild(button);
+
+      answers.appendChild(
+        button
+      );
+
     }
   );
 
@@ -1394,16 +1671,18 @@ function showHardQuestion() {
   updateUI();
 
   startTimer();
+
 }
 
 
 /* =====================================================
-   СЛЕДУЮЩИЙ СЛОЖНЫЙ ВОПРОС
+   СЛЕДУЮЩИЙ ВОПРОС СЛОЖНОГО
 ===================================================== */
 
 function hardNextQuestion() {
 
   hardQuestionIndex++;
+
 
   if (
     hardQuestionIndex >= 3
@@ -1412,19 +1691,23 @@ function hardNextQuestion() {
     hardCompleted();
 
     return;
+
   }
+
 
   currentQuestion =
     currentQuestions[
       hardQuestionIndex
     ];
 
+
   showHardQuestion();
+
 }
 
 
 /* =====================================================
-   СЛОЖНЫЙ ПРОЙДЕН
+   СЛОЖНЫЙ УРОВЕНЬ ПРОЙДЕН
 ===================================================== */
 
 function hardCompleted() {
@@ -1439,18 +1722,25 @@ function hardCompleted() {
   const reward =
     Math.floor(
       Math.random() *
-      (485 - 200 + 1)
+      (
+        485 - 200 + 1
+      )
     ) + 200;
 
 
   coins += reward;
 
+
   score += 500;
 
 
   if (score > highScore) {
-    highScore = score;
+
+    highScore =
+      score;
+
   }
+
 
   saveData();
 
@@ -1491,15 +1781,21 @@ function hardCompleted() {
     level;
 
 
+  /*
+    Автоматического перехода
+    в меню больше нет.
+  */
+
   document.getElementById(
     "resultCountdown"
   ).textContent =
     "Выбери действие:";
+
 }
 
 
 /* =====================================================
-   СЛОЖНЫЙ ПРОВАЛЕН
+   СЛОЖНЫЙ УРОВЕНЬ ПРОВАЛЕН
 ===================================================== */
 
 function hardFailed() {
@@ -1508,15 +1804,50 @@ function hardFailed() {
 
   game.classList.add("hidden");
 
-  categoryScreen.classList.remove(
-    "hidden"
-  );
+  result.classList.remove("hidden");
 
-  showToast(
-    "🔄 Выбери новую категорию!"
-  );
 
-  createCategoryChoices();
+  document.getElementById(
+    "resultIcon"
+  ).textContent =
+    "❌";
+
+
+  document.getElementById(
+    "resultTitle"
+  ).textContent =
+    "СЛОЖНЫЙ УРОВЕНЬ ПРОВАЛЕН";
+
+
+  document.getElementById(
+    "finalScore"
+  ).textContent =
+    score;
+
+
+  document.getElementById(
+    "finalCoins"
+  ).textContent =
+    coins;
+
+
+  document.getElementById(
+    "correctAnswers"
+  ).textContent =
+    hardCorrect + "/3";
+
+
+  document.getElementById(
+    "finalLevel"
+  ).textContent =
+    level;
+
+
+  document.getElementById(
+    "resultCountdown"
+  ).textContent =
+    "Попробуй ещё раз или вернись в меню.";
+
 }
 
 
@@ -1531,8 +1862,10 @@ fiftyBtn.addEventListener(
     if (answerLocked)
       return;
 
+
     if (fiftyUsed)
       return;
+
 
     if (inventory.fifty <= 0) {
 
@@ -1541,14 +1874,18 @@ fiftyBtn.addEventListener(
       );
 
       return;
+
     }
+
 
     const buttons =
       document.querySelectorAll(
         ".answer"
       );
 
+
     let removed = 0;
+
 
     for (
       let i = 0;
@@ -1557,7 +1894,9 @@ fiftyBtn.addEventListener(
     ) {
 
       if (
-        i !== currentQuestion.correct &&
+        i !==
+        currentQuestion.correct
+        &&
         removed < 2
       ) {
 
@@ -1565,8 +1904,11 @@ fiftyBtn.addEventListener(
           "hidden";
 
         removed++;
+
       }
+
     }
+
 
     inventory.fifty--;
 
@@ -1574,9 +1916,11 @@ fiftyBtn.addEventListener(
 
     saveData();
 
+
     showToast(
       "✂️ 50/50 использовано!"
     );
+
   }
 );
 
@@ -1592,6 +1936,7 @@ timeBtn.addEventListener(
     if (answerLocked)
       return;
 
+
     if (inventory.time <= 0) {
 
       showToast(
@@ -1599,7 +1944,9 @@ timeBtn.addEventListener(
       );
 
       return;
+
     }
+
 
     time += 10;
 
@@ -1607,12 +1954,15 @@ timeBtn.addEventListener(
 
     saveData();
 
+
     timerCircle.textContent =
       time;
+
 
     showToast(
       "⏱️ +10 секунд!"
     );
+
   }
 );
 
@@ -1628,6 +1978,7 @@ otherBtn.addEventListener(
     if (answerLocked)
       return;
 
+
     if (isHardLevel()) {
 
       showToast(
@@ -1635,7 +1986,9 @@ otherBtn.addEventListener(
       );
 
       return;
+
     }
+
 
     if (inventory.other <= 0) {
 
@@ -1644,13 +1997,17 @@ otherBtn.addEventListener(
       );
 
       return;
+
     }
+
 
     inventory.other--;
 
     saveData();
 
+
     let newQuestion;
+
 
     do {
 
@@ -1667,14 +2024,18 @@ otherBtn.addEventListener(
       currentQuestion
     );
 
+
     currentQuestion =
       newQuestion;
 
+
     showQuestion();
+
 
     showToast(
       "🔄 Новый вопрос!"
     );
+
   }
 );
 
@@ -1687,11 +2048,16 @@ shopBtn.addEventListener(
   "click",
   () => {
 
-    menu.classList.add("hidden");
+    menu.classList.add(
+      "hidden"
+    );
 
-    shop.classList.remove("hidden");
+    shop.classList.remove(
+      "hidden"
+    );
 
     updateUI();
+
   }
 );
 
@@ -1700,9 +2066,14 @@ backBtn.addEventListener(
   "click",
   () => {
 
-    shop.classList.add("hidden");
+    shop.classList.add(
+      "hidden"
+    );
 
-    menu.classList.remove("hidden");
+    menu.classList.remove(
+      "hidden"
+    );
+
   }
 );
 
@@ -1719,6 +2090,7 @@ document
 
       const price = 100;
 
+
       if (coins < price) {
 
         showToast(
@@ -1726,7 +2098,9 @@ document
         );
 
         return;
+
       }
+
 
       coins -= price;
 
@@ -1734,12 +2108,187 @@ document
 
       saveData();
 
+
       showToast(
         "✂️ Куплено 50/50!"
       );
+
     }
   );
 
 
 /* =====================================================
    ПОКУПКА +10
+===================================================== */
+
+document
+  .getElementById("buyTime")
+  .addEventListener(
+    "click",
+    () => {
+
+      const price = 150;
+
+
+      if (coins < price) {
+
+        showToast(
+          "❌ Не хватает монет!"
+        );
+
+        return;
+
+      }
+
+
+      coins -= price;
+
+      inventory.time++;
+
+      saveData();
+
+
+      showToast(
+        "⏱️ Куплено +10 секунд!"
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   ПОКУПКА ДРУГОГО ВОПРОСА
+===================================================== */
+
+document
+  .getElementById("buyOther")
+  .addEventListener(
+    "click",
+    () => {
+
+      const price = 200;
+
+
+      if (coins < price) {
+
+        showToast(
+          "❌ Не хватает монет!"
+        );
+
+        return;
+
+      }
+
+
+      coins -= price;
+
+      inventory.other++;
+
+      saveData();
+
+
+      showToast(
+        "🔄 Куплен другой вопрос!"
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   ИГРАТЬ
+===================================================== */
+
+playBtn.addEventListener(
+  "click",
+  startGame
+);
+
+
+againBtn.addEventListener(
+  "click",
+  startGame
+);
+
+
+/* =====================================================
+   КНОПКА В МЕНЮ
+===================================================== */
+
+menuBtn.addEventListener(
+  "click",
+  () => {
+
+    clearInterval(timer);
+
+    showMenu();
+
+  }
+);
+
+
+/* =====================================================
+   ВЫЙТИ ИЗ ИГРЫ
+===================================================== */
+
+quitBtn.addEventListener(
+  "click",
+  () => {
+
+    clearInterval(timer);
+
+    showMenu();
+
+  }
+);
+
+
+/* =====================================================
+   ОТМЕНА СЛОЖНОГО
+===================================================== */
+
+cancelHardBtn.addEventListener(
+  "click",
+  () => {
+
+    showMenu();
+
+  }
+);
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(text) {
+
+  toast.textContent =
+    text;
+
+  toast.classList.add(
+    "show"
+  );
+
+
+  setTimeout(
+    () => {
+
+      toast.classList.remove(
+        "show"
+      );
+
+    },
+    1800
+  );
+
+}
+
+
+/* =====================================================
+   ЗАПУСК
+===================================================== */
+
+updateUI();
+
+showMenu();
